@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('artist', 'ArtistController@index');
+Route::get('type', 'TypeController@index');
+Route::get('locality', 'LocalityController@index');
