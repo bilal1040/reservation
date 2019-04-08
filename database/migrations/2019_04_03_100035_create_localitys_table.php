@@ -15,8 +15,8 @@ class CreateLocalitysTable extends Migration
     {
         Schema::create('localitys', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->Increments('id');
-            $table->int('postal_code')->length(6);
+            $table->increments('id');
+            $table->string('postal_code')->length(6);
             $table->string('locality')->length(60);
         });
     }
