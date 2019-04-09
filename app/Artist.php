@@ -26,5 +26,10 @@ class Artist extends Model
      * @var bool
      */
     public $timestamps = false;
+
+     public function artiste_type(){
+
+        return $this->hasMany('App\Artiste_type');
+    }
 }
 

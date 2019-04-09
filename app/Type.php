@@ -11,4 +11,10 @@ class Type extends Model
    protected $table = 'types';
 
    public $timestamps = false;
+
+public function artiste_type(){
+
+        return $this->hasMany('App\Artiste_type');
+    }
+}
 }
