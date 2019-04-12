@@ -12,9 +12,9 @@ class Type extends Model
 
    public $timestamps = false;
 
-public function artiste_type(){
+	public function artiste_type(){
 
         return $this->hasMany('App\Artiste_type');
-    }
-}
+    
+	}
 }

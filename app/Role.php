@@ -11,4 +11,10 @@ class Role extends Model
     protected $table = 'roles';
 
     public $timestamps = false;
+
+     public function userss(){
+
+    	return $this->hasMany('App\Userss');
+    }
+
 }

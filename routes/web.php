@@ -20,3 +20,5 @@ Route::get('type', 'TypeController@index');
 Route::get('locality', 'LocalityController@index');
 Route::get('role','RoleController@index');
 Route::get('location','LocationController@index');
+Route::get('artistetype','ArtisteTypeController@index');
+Route::get('user','UserController@index');
