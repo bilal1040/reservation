@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /*
-travail de Bilal
+travail de Bilalit
 */
 
 class Artist extends Model

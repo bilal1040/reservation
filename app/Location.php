@@ -18,4 +18,9 @@ class Location extends Model
 
     	return $this->belongsTo('App\Locality');
     }
+
+    public function show (){
+
+    	return $this-> hasOne('App\Show');
+    }
 }
