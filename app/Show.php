@@ -8,7 +8,7 @@ class Show extends Model
 {
     protected $fillable =['slug', 'title', 'poster_url','bookable', 'price'];
 
-   	protected $guarded =['locality_id'];
+   	protected $guarded =['locations_id'];
 
    	protected $table = "shows";
 
@@ -18,5 +18,10 @@ class Show extends Model
     public function location(){
 
     	return $this->belongsTo('App\Location');
+    }
+
+    public function artiste_type_show(){
+
+    	return $this->belongsTo('App\artiste_type_show');
     }
 }

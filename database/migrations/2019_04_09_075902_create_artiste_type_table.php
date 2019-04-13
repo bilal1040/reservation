@@ -14,7 +14,7 @@ class CreateArtisteTypeTable extends Migration
     public function up()
     {
         Schema::create('artiste_type', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->Increments('id');
            
 
             $table->unsignedInteger('artists_id')->index();

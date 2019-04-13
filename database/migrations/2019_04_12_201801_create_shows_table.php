@@ -15,16 +15,16 @@ class CreateShowsTable extends Migration
     {
         Schema::create('shows', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->bigIncrements('id');
+            $table->Increments('id');
             $table->string('slug')->length(60);
             $table->string('title')->length(255);
             $table->string('poster_url')->length(255);
             $table->tinyInteger('bookable')->length(1);
             $table->decimal('price',10,2);
-            $table->unsignedInteger('locality_id')->index();
+            $table->unsignedInteger('location_id')->index();
 
 
-            $table->foreign('locality_id')->references('id')->on('localitys');
+            $table->foreign('location_id')->references('id')->on('locations');
         
 
 

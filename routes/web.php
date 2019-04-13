@@ -22,3 +22,5 @@ Route::get('role','RoleController@index');
 Route::get('location','LocationController@index');
 Route::get('artistetype','ArtisteTypeController@index');
 Route::get('user','UserController@index');
+Route::get('show', 'ShowController@index');
+Route::get('artistetypeshow', 'ArtisteTypeShowController@index');

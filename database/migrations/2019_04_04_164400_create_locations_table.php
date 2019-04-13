@@ -15,7 +15,7 @@ class CreateLocationsTable extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->bigIncrements('id');
+            $table->Increments('id');
             $table->string('slug')->length(60);
             $table->string('designation')->length(60);
             $table->string('address')->length(255);
