@@ -24,4 +24,9 @@ class Show extends Model
 
     	return $this->belongsTo('App\artiste_type_show');
     }
+
+    public function representation(){
+
+      return $this->belongsTo('App\Representation');
+    }
 }

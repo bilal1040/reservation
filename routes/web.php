@@ -24,3 +24,5 @@ Route::get('artistetype','ArtisteTypeController@index');
 Route::get('user','UserController@index');
 Route::get('show', 'ShowController@index');
 Route::get('artistetypeshow', 'ArtisteTypeShowController@index');
+Route::get('representation', 'RepresentationController@index');
+Route::get('representationuser', 'RepresentationUserController@index');

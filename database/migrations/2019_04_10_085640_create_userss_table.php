@@ -17,7 +17,7 @@ class CreateUserssTable extends Migration
 
         Schema::create('userss', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->bigIncrements('id');
+            $table->Increments('id');
             $table->string('login')->length(30);
             $table->string('password')->length(255);
             $table->string('firstname')->length(60);

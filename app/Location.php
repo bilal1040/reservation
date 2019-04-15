@@ -21,6 +21,11 @@ class Location extends Model
 
     public function show (){
 
-    	return $this-> hasOne('App\Show');
+    	return $this->hasOne('App\Show');
+    }
+
+    public function representation(){
+
+        return $this->belongsTo('App\Representation');
     }
 }
