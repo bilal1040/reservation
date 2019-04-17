@@ -26,3 +26,8 @@ Route::get('show', 'ShowController@index');
 Route::get('artistetypeshow', 'ArtisteTypeShowController@index');
 Route::get('representation', 'RepresentationController@index');
 Route::get('representationuser', 'RepresentationUserController@index');
+
+
+
+Route::view('/', "login");
+Route::get('/inscription',"InscriptionController@inscription");
