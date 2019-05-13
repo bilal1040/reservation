@@ -11,11 +11,13 @@
     <div class="col">
       
     </div>
-    <div class="col-6">
+   
+
+    <div class="col-10">
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col"  >Slug</th>
+      <th scope="col">Slug</th>
       <th scope="col">Title</th>
       <th scope="col">Poster_url</th>
       <th scope="col">Bookable</th>
@@ -27,7 +29,7 @@
         @foreach($shows as $show)
             <tr>
                 <td>{{ $show->slug }}</td>
-                <td class="col-3 lg">{{ $show->title }}</td>
+                <td class="col-">{{ $show->title }}</td>
                 <td>{{ $show->poster_url }}</td>
                 <td>{{ $show->bookable}}</td>
                 <td>{{ $show->price}}</td>

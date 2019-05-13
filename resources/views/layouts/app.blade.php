@@ -76,18 +76,23 @@
                 </div>
             </div>
         </nav>
-        <main class="py-4">
-            @yield('content')
-        </main>
+       
     </div>
 
-        <div id='tab'>
-            <nav class="nav flex-column">
+        <div class="container" style="display: block;position: fixed;">
+            <div class="row">
+                <div class="col-2-lg" style="border: 0.5px solid black;" >
+            <nav class="">
             <a class="nav-link" href="#">Accueil</a>
             <a class="nav-link" href="#">Prochains spectacle</a>
             <a class="nav-link" href="#">Administration</a>
             <a class="nav-link" href="#">Contact</a>
+        </nav>
         </div>
-        
+        </div>
+        </div>
+        <main class="py-4">
+            @yield('content')
+        </main>
 </body>
 </html>
