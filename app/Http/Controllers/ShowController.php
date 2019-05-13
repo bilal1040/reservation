@@ -18,7 +18,7 @@ class ShowController extends Controller
 
         return view('shows.index',[
             'shows'=>$shows,
-            'resource'=>'Shows',
+            'resource'=>'Spectacles',
 
         ]);
     }

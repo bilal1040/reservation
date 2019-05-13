@@ -27,7 +27,16 @@ Route::get('artistetypeshow', 'ArtisteTypeShowController@index');
 Route::get('representation', 'RepresentationController@index');
 Route::get('representationuser', 'RepresentationUserController@index');
 Route::get('inscription','InscriptionController@inscription');
+Route::get('login', 'LoginController@login');
 
 
 
-Route::view('/', "login");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -13,17 +13,17 @@ class RepresentationsUsersTableSeeder extends Seeder
     {
         $representationsusers = [
         	['places' =>'50',
-        	'userss_id'=>'1',
-        	'representation_id'=>'2',
+        	'users_id'=>'1',
+        	'representation_id'=>'1',
         ],
 
         	['places'=>'70',
-        	'userss_id'=>'2',
+        	'users_id'=>'2',
         	'representation_id'=>'4',
     	],	
 
     		['places'=>'20',
-    		'userss_id'=>'1',
+    		'users_id'=>'1',
     		'representation_id'=>'3',
 
     	],
@@ -35,7 +35,7 @@ class RepresentationsUsersTableSeeder extends Seeder
      foreach ($representationsusers as $a) {
      	DB::table('representations_user')->insert([
      		'places'=>$a['places'],
-     		'userss_id'=>$a['userss_id'],
+     		'users_id'=>$a['users_id'],
      		'representation_id'=>$a['representation_id'],
 
      	]);

@@ -8,15 +8,15 @@ class Representation_user extends Model
 {
    protected $fillable =['places'];
 
-   protected $guarded=['userss_id', 'representation_id'];
+   protected $guarded=['users_id', 'representation_id'];
 
    protected $table = "representations_user";
 
    public $timestamps = false;
 
-   public function userss(){
+   public function users(){
 
-   	return $this->hasOne('App\Userss');
+   	return $this->hasOne('App\Users');
 
    }
 

@@ -17,8 +17,8 @@ class CreateRepresentationsUserTable extends Migration
             $table->engine = 'InnoDB';
             $table->Increments('id');
             $table->integer('places');
-            $table->unsignedInteger('userss_id')->index();
-            $table->foreign('userss_id')->references('id')->on('userss');
+            $table->unsignedInteger('users_id')->index();
+            $table->foreign('users_id')->references('id')->on('users');
             $table->unsignedInteger('representation_id')->index();
             $table->foreign('representation_id')->references('id')->on('representations');
            

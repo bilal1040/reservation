@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -42,11 +44,11 @@
             }
 
             .content {
-                text-align: center;
+                text-align: right;
             }
 
             .title {
-                font-size: 84px;
+                font-size: 30px;
             }
 
             .links > a {
@@ -60,7 +62,11 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 2px;
+            }
+            #title1{
+                font-size: 3.5em;
+                margin-top: -280px;
             }
         </style>
     </head>
@@ -71,24 +77,14 @@
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <a href="{{ url('/login') }}">Connexion</a>
+                        <a href="{{ url('/register') }}">Inscription</a>
                     @endif
                 </div>
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <h1 id="title1">Reservation</h1>
             </div>
         </div>
     </body>
