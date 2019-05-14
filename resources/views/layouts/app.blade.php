@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: black;">
 
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -79,9 +79,9 @@
        
     </div>
 
-        <div class="container" style="display: block;position: fixed;">
+        <div class="container" style="display: block;position: fixed;top: 25vh;">
             <div class="row">
-                <div class="col-2-lg" style="border: 0.5px solid black;" >
+                <div class="col-2-lg" style="border: 0.5px solid black;background-color: white;" >
             <nav class="">
             <a class="nav-link" href="#">Accueil</a>
             <a class="nav-link" href="#">Prochains spectacle</a>
