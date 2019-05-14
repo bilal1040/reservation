@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             RolesTableSeeder::class,
             LocationsTableSeeder::class,
             ArtistesTypeTableSeeder::class,
-            UserssTableSeeder::class,
+            UsersTableSeeder::class,
             ShowsTableSeeder::class,
             ArtistesTypeShowTableSeeder::class,
             RepresentationsTableSeeder::class,

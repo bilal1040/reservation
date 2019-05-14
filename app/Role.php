@@ -12,9 +12,9 @@ class Role extends Model
 
     public $timestamps = false;
 
-     public function userss(){
+     public function users(){
 
-    	return $this->hasOne('App\Userss');
+    	return $this->hasOne('App\Users');
     }
 
 }

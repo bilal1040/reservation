@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Userss;
+use App\User;
 
 class UserController extends Controller
 {
@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users=userss::all();
+        $users=user::all();
         return view('users.index', [
             'users'=>$users,
             'resource'=>'Users',

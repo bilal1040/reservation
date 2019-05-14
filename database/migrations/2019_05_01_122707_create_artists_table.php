@@ -11,26 +11,23 @@ class CreateArtistsTable extends Migration
      *
      * @return void
      */
-      public function up()
+    public function up()
     {
         Schema::create('artists', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('firstname')->length(60);
             $table->string('lastname')->length(60);
+            
         });
     }
-
-    
 
     /**
      * Reverse the migrations.
      *
      * @return void
      */
-        public function down()
+    public function down()
     {
         Schema::dropIfExists('artists');
     }
 }
-

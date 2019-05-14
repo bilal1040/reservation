@@ -11,10 +11,10 @@ class ArtistesTypeShowTableSeeder extends Seeder
      */
     public function run()
     {
-        //$artistestypeshow=[
-        	['artiste_type_id'=> '1', 'shows_id'=>'2'],
-        	['artiste_type_id'=> '2', 'shows_id'=>'3'],
-        	['artiste_type_id'=> '3', 'shows_id'=>'1'],
+        $artistestypeshow=[
+        	['artiste_type_id'=> '1', 'shows_id'=>'1'],
+        	['artiste_type_id'=> '2', 'shows_id'=>'2'],
+        	['artiste_type_id'=> '3', 'shows_id'=>'6'],
 
         ];
 
