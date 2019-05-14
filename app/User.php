@@ -16,9 +16,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+<<<<<<< HEAD
         'login', 'email', 'password','firstname','lastname','role_id','langue'
+=======
+        'login', 'password','firstname','lastname','email', 'langue', 'role_id'
+>>>>>>> aefc0ef5e2d62afbce6b5356cdc46ec9493606dc
     ];
 
+    protected $table='users';
+
+    public $timestamps = false;
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -28,6 +35,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+<<<<<<< HEAD
     /**
      * The attributes that should be cast to native types.
      *
@@ -38,4 +46,10 @@ class User extends Authenticatable
     ];
 
     public $timestamps = false;
+=======
+    public function role(){
+
+        return $this->belongsTo('App\Role');
+    }
+>>>>>>> aefc0ef5e2d62afbce6b5356cdc46ec9493606dc
 }

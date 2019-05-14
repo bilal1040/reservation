@@ -28,7 +28,10 @@ Route::get('representation', 'RepresentationController@index');
 Route::get('representationuser', 'RepresentationUserController@index');
 Route::get('inscription','InscriptionController@inscription');
 Route::get('login', 'LoginController@login');
+<<<<<<< HEAD
 Route::get('paiement', 'PaiementController@paiement');
+=======
+>>>>>>> aefc0ef5e2d62afbce6b5356cdc46ec9493606dc
 
 
 
@@ -41,7 +44,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+=======
+>>>>>>> aefc0ef5e2d62afbce6b5356cdc46ec9493606dc
