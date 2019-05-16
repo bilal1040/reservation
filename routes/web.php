@@ -28,6 +28,17 @@ Route::get('representation', 'RepresentationController@index');
 Route::get('representationuser', 'RepresentationUserController@index');
 Route::get('inscription','InscriptionController@inscription');
 Route::get('login', 'LoginController@login');
+
+
+// Code need verification (next few lines)
+Route::get('paiement', 'PaiementController@paiement');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+/*
 <<<<<<< HEAD
 Route::get('paiement', 'PaiementController@paiement');
 =======
@@ -51,3 +62,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 =======
 >>>>>>> aefc0ef5e2d62afbce6b5356cdc46ec9493606dc
+*/
