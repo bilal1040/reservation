@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>  
+<body style="background: url('images/scene.jpg') no-repeat center fixed;background-size: cover;">  
 
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
