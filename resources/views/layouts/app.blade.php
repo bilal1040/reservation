@@ -19,15 +19,17 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body style="background: url('images/scene.jpg') no-repeat center fixed;background-size: cover;">  
+<body style="background-image: url('images/fond.jpg');">  
 
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
    
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
-            </a>
+            
+            <a class="nav-link" href="/">Accueil</a>
+                <a class="nav-link" href="show">Prochains spectacle</a>
+                <a class="nav-link" href="#">Administration</a>
+                <a class="nav-link" href="#">Contact</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -81,13 +83,9 @@
         </main>
     </div>
 
-        <div id='tab'>
-            <nav class="nav flex-column">
-            <a class="nav-link" href="#">Accueil</a>
-            <a class="nav-link" href="#">Prochains spectacle</a>
-            <a class="nav-link" href="#">Administration</a>
-            <a class="nav-link" href="#">Contact</a>
-        </div>
+        
+
+       
         
 </body>
 </html>
