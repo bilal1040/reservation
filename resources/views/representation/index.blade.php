@@ -1,20 +1,31 @@
-<h1> Liste des {{ $resource }}</h1>
-
 @extends('layouts.app')
-
-
-
 @section('content')
 
-    <table>
-        <thead>
-            <tr>
-                <th>When</th>
-                <th>Locations_id</th>
-                <th>Shows_id</th>
-            </tr>
-        </thead>
-        <tbody>
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<h1 id="titreArtiste"> Liste des {{ $resource }}</h1>
+<br />
+
+<style>
+  
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      
+    </div>
+    <div class="col-6">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">When</th>
+      <th scope="col">Location_id</th>
+      <th scope="col">Shows_id</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+
         @foreach($representation as $representations)
             <tr>
                 <td>{{ $representations->when }}</td>
@@ -24,4 +35,10 @@
         @endforeach
         </tbody>
     </table>
+    </div>
+    <div class="col">
+    
+    </div>
+    </div>
+</div>
 @endsection

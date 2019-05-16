@@ -18,7 +18,6 @@ class CreateRepresentationsTable extends Migration
             $table->Increments('id');
             $table->datetime('when');
             $table->unsignedInteger('location_id')->index();
-            $table->foreign('location_id')->references('id')->on('locations');
             $table->unsignedInteger('show_id')->index();
             $table->foreign('show_id')->references('id')->on('shows');
 

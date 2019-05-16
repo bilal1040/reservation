@@ -29,4 +29,9 @@ class Show extends Model
 
       return $this->belongsTo('App\Representation');
     }
+
+      public function reservation(){
+
+      return $this->hasMany('App/Reservation'); 
+    }
 }

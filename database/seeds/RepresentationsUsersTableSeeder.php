@@ -18,13 +18,13 @@ class RepresentationsUsersTableSeeder extends Seeder
         ],
 
         	['places'=>'70',
-        	'users_id'=>'2',
-        	'representation_id'=>'4',
+        	'users_id'=>'1',
+        	'representation_id'=>'2',
     	],	
 
     		['places'=>'20',
     		'users_id'=>'1',
-    		'representation_id'=>'3',
+    		'representation_id'=>'6',
 
     	],
 

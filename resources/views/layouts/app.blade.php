@@ -76,7 +76,7 @@
                 </div>
             </div>
         </nav>
-<<<<<<< HEAD
+
         <main class="py-4">
             @yield('content')
         </main>
@@ -89,26 +89,7 @@
             <a class="nav-link" href="#">Administration</a>
             <a class="nav-link" href="#">Contact</a>
         </div>
-        
-=======
-       
-    </div>
 
-        <div class="container" style="display: block;position: fixed;">
-            <div class="row">
-                <div class="col-2-lg" style="border: 0.5px solid black;" >
-            <nav class="">
-            <a class="nav-link" href="#">Accueil</a>
-            <a class="nav-link" href="#">Prochains spectacle</a>
-            <a class="nav-link" href="#">Administration</a>
-            <a class="nav-link" href="#">Contact</a>
-        </nav>
-        </div>
-        </div>
-        </div>
-        <main class="py-4">
-            @yield('content')
-        </main>
->>>>>>> aefc0ef5e2d62afbce6b5356cdc46ec9493606dc
+    </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Role;
+use App\roles;
 
 class RoleController extends Controller
 {
@@ -14,8 +14,8 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles= Role::all();
-        return view('roles.index', [
+        $roles= Roles::all();
+        return view('role.index', [
             'roles'=>$roles,
             'resource'=>'roles',
 

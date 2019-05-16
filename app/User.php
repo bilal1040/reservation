@@ -16,11 +16,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-<<<<<<< HEAD
-        'login', 'email', 'password','firstname','lastname','role_id','langue'
-=======
-        'login', 'password','firstname','lastname','email', 'langue', 'role_id'
->>>>>>> aefc0ef5e2d62afbce6b5356cdc46ec9493606dc
+
+        'login', 'email', 'password','firstname','lastname','roles_id','langue'
+
     ];
 
     protected $table='users';
@@ -35,7 +33,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-<<<<<<< HEAD
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -45,11 +43,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public $timestamps = false;
-=======
+
     public function role(){
 
         return $this->belongsTo('App\Role');
     }
->>>>>>> aefc0ef5e2d62afbce6b5356cdc46ec9493606dc
+
+     public function reservation(){
+
+    return $this->hasOne('App\Reservation');
+
+   }
 }
