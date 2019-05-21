@@ -10,11 +10,11 @@
       		<div class="col">
       		<img src="images/cible.jpg" class="img1">
                   <img src="images/ayiti.jpg" class="img1">
-      			
-      			
-      			
+
+
+
       		</div>
       	</div>
-      </div>	
-       
+      </div>
+
 |@endsection

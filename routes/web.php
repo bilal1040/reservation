@@ -28,6 +28,8 @@ Route::get('representation', 'RepresentationController@index');
 Route::get('representationuser', 'RepresentationUserController@index');
 Route::get('inscription','InscriptionController@inscription');
 Route::get('login', 'LoginController@login');
+//Footer route
+Route::get('index', 'IndexController@index');
 
 
 // Code need verification (next few lines)
