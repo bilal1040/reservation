@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <!-- footer style -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 7%;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,6 +35,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+
+    <header>
+
+    </header>
 
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -76,7 +95,9 @@
                 </div>
             </div>
         </nav>
+        <!--
 <<<<<<< HEAD
+-->
         <main class="py-4">
             @yield('content')
         </main>
@@ -89,9 +110,9 @@
             <a class="nav-link" href="#">Administration</a>
             <a class="nav-link" href="#">Contact</a>
         </div>
-        
+
+     <!--
 =======
-       
     </div>
 
         <div class="container" style="display: block;position: fixed;">
@@ -110,5 +131,11 @@
             @yield('content')
         </main>
 >>>>>>> aefc0ef5e2d62afbce6b5356cdc46ec9493606dc
+    -->
+
+    <footer class="footer">
+        Your Footer Content Goes Here
+    </footer>
+
 </body>
 </html>
