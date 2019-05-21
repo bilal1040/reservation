@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body style="background-image: url('images/fond.jpg');">  
+<body >  
 
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
