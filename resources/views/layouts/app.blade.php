@@ -26,7 +26,7 @@
    
         <div class="container">
             
-            <a class="nav-link" href="/">Accueil</a>
+            <a class="nav-link" href=" / ">Accueil</a>
                 <a class="nav-link" href="show">Prochains spectacle</a>
                 <a class="nav-link" href="#">Administration</a>
                 <a class="nav-link" href="contact">Contact</a>
