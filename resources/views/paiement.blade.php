@@ -1,21 +1,21 @@
 
-
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <h1 id="titreArtiste"> Panier </h1>
   <br />
 
   <div class="container">
+
+    
     <div class="row">
-      <div class="col">      
-      </div>
-      <div class="col-10">
+      
+      <div class="col-12">
         <table class="table">
           <thead class="thead-dark">
             <tr>
               <th scope="col"> Titre </th>
               <th scope="col"> Nombre de place </th>
-              <th scope="col"> Prix</th>
-              <th> </th>
+              <th scope="col">Prix</th>
+              
             </tr>
           </thead>
           <?php
@@ -29,7 +29,7 @@
             $tpc = 0;
             //Button when I clikc on submit
             if (isset($_GET['submit'])){
-              foreach ($_GET['id'] as $id):
+              foreach ($_GET['id'] as $id){
                 //Select all From users
                 $sq1=mysqli_query($conn,"select * from `users`");
                 $srow1=mysqli_fetch_array($sq1);
@@ -38,22 +38,30 @@
                 $srow=mysqli_fetch_array($sq);
                 //Variable define
                 $idUsers = $srow1['id'];
-                $total += $srow['price'];
+                
                 $title = $srow['title'];
                 $prix = $srow['price'];
                 $idShows = $srow['id'];
                 $tpc = $total *100;
+                
           ?>
           <tbody>
             <tr>            
-              <td> <?php echo $title; ?> </td>
-              <td> <p id="btnEdit">1</p></td>
-              <td><?php echo $prix; ?></td>
-              <td><button onclick="edit()">Modifier</button></td>
+              <td style="width:130vh;"> <?php echo $title; ?> </td>
+              <td>
+                
+                <input type="number" id="qt" value="1" style="width:50px;" />
+                
+
+              </td>
+              <td id="prix"><?php echo $prix; ?></td>
+              
             </tr>
           </tbody>
+         
           <?php
-            endforeach;             
+            
+            }            
             }
           ?>
         </table>      
@@ -97,15 +105,10 @@
 
     </div>
 
-    <script>
-      function edit() {
-        var nmbr = prompt('Entrez le nombre de place');
-        document.getElementById("btnEdit").innerHTML = nmbr;
-      }
-
-    </script>
+    
     <div class="col">
     </div>
     </div>
-
+  
+    
 
