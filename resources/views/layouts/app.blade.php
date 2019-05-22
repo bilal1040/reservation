@@ -29,7 +29,7 @@
             <a class="nav-link" href="/">Accueil</a>
                 <a class="nav-link" href="show">Prochains spectacle</a>
                 <a class="nav-link" href="#">Administration</a>
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="contact">Contact</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

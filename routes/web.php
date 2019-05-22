@@ -28,6 +28,9 @@ Route::get('representation', 'RepresentationController@index');
 Route::get('representationuser', 'RepresentationUserController@index');
 Route::get('inscription','InscriptionController@inscription');
 Route::get('login', 'LoginController@login');
+Route::get('/', function () {
+    return view('contact');
+});
 
 
 
