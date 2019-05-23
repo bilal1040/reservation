@@ -1,4 +1,4 @@
-
+  <script src="{{ asset('js/app.js') }}" defer></script>
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <h1 id="titreArtiste"> Panier </h1>
   <br />
@@ -38,9 +38,9 @@
                 $srow=mysqli_fetch_array($sq);
                 //Variable define
                 $idUsers = $srow1['id'];
-                
                 $title = $srow['title'];
                 $prix = $srow['price'];
+                $total += $prix;
                 $idShows = $srow['id'];
                 $tpc = $total *100;
                 
@@ -49,8 +49,16 @@
             <tr>            
               <td style="width:130vh;"> <?php echo $title; ?> </td>
               <td>
+               <form>
+
+                <input id="moins" type="button" value="-" /><!--
+                --><input id ="result" type="texte" value="5" maxlength="2" /><!--
+                --><input id="plus" type="button" value="+" />
+                </form>
                 
-                <input type="number" id="qt" value="1" style="width:50px;" />
+                 
+    
+
                 
 
               </td>
@@ -104,7 +112,7 @@
       </form>
 
     </div>
-
+    
     
     <div class="col">
     </div>
