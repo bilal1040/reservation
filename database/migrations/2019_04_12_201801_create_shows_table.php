@@ -22,13 +22,6 @@ class CreateShowsTable extends Migration
             $table->tinyInteger('bookable')->length(1);
             $table->decimal('price',10,2);
             $table->unsignedInteger('location_id')->index();
-
-
-            $table->foreign('location_id')->references('id')->on('locations');
-        
-
-
-
            
         });
     }

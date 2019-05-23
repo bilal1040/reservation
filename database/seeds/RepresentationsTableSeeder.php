@@ -23,7 +23,7 @@ class RepresentationsTableSeeder extends Seeder
         ],
         	['when'=>'2018-05-25 20:30:00',
         	'location_id'=>'2',
-        	'show_id'=>'6',
+        	'show_id'=>'3',
         ],
         	['when'=>'2018-05-30 20:30:00',
         	'location_id'=>'2',
