@@ -11,9 +11,15 @@ class PaiementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('paiement');
+        dump($request->input('id'));die;
+
+        $shows = Show::where();
+        
+        return view('paiement',[
+            'shows'=>$shows,
+        ]);
             
     }
 

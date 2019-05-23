@@ -17,7 +17,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
 
-        'login', 'email', 'password','firstname','lastname','roles_id','langue'
+    'login', 'password','firstname','lastname','email','langue','roles_id'
+
 
     ];
 
@@ -44,14 +45,17 @@ class User extends Authenticatable
     ];
 
 
+
     public function role(){
 
         return $this->belongsTo('App\Role');
     }
+
 
      public function reservation(){
 
     return $this->hasOne('App\Reservation');
 
    }
+
 }
