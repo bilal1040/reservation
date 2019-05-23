@@ -34,7 +34,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+
+<body >  
+
 
     <header>
 
@@ -44,9 +46,15 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
    
         <div class="container">
+
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
+            	<a class="nav-link" href="/">Accueil</a>
+                <a class="nav-link" href="show">Prochains spectacle</a>
+                <a class="nav-link" href="#">Administration</a>
+                <a class="nav-link" href="contact">Contact</a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -95,43 +103,20 @@
                 </div>
             </div>
         </nav>
-        <!--
-<<<<<<< HEAD
--->
+
         <main class="py-4">
             @yield('content')
         </main>
     </div>
 
-        <div id='tab'>
-            <nav class="nav flex-column">
-            <a class="nav-link" href="#">Accueil</a>
-            <a class="nav-link" href="show">Prochains spectacle</a>
-            <a class="nav-link" href="#">Administration</a>
-            <a class="nav-link" href="#">Contact</a>
-        </div>
-
-     <!--
-=======
-    </div>
-
-        <div class="container" style="display: block;position: fixed;">
-            <div class="row">
-                <div class="col-2-lg" style="border: 0.5px solid black;" >
-            <nav class="">
-            <a class="nav-link" href="#">Accueil</a>
-            <a class="nav-link" href="#">Prochains spectacle</a>
-            <a class="nav-link" href="#">Administration</a>
-            <a class="nav-link" href="#">Contact</a>
+    <div id='tab'>
+        <nav class="nav flex-column">
+          <a class="nav-link" href="#">Accueil</a>
+          <a class="nav-link" href="show">Prochains spectacle</a>
+          <a class="nav-link" href="#">Administration</a>
+          <a class="nav-link" href="#">Contact</a>
         </nav>
-        </div>
-        </div>
-        </div>
-        <main class="py-4">
-            @yield('content')
-        </main>
->>>>>>> aefc0ef5e2d62afbce6b5356cdc46ec9493606dc
-    -->
+    </div>
 
     <footer class="footer">
         Your Footer Content Goes Here

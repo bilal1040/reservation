@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,11 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('artist', 'ArtistController@index');
 Route::get('type', 'TypeController@index');
 Route::get('locality', 'LocalityController@index');
@@ -31,36 +28,12 @@ Route::get('login', 'LoginController@login');
 
 
 
-// Code need verification (next few lines)
-Route::get('paiement', 'PaiementController@paiement');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-/*
-<<<<<<< HEAD
-Route::get('paiement', 'PaiementController@paiement');
-=======
->>>>>>> aefc0ef5e2d62afbce6b5356cdc46ec9493606dc
-
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-<<<<<<< HEAD
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-=======
->>>>>>> aefc0ef5e2d62afbce6b5356cdc46ec9493606dc
-*/
+Route::get('paiement', 'PaiementController@index');
+Route::get('paiementconfirm','PaiementConfirmController@index' );
+Route::get('contact', function (){
+	return view('contact');
+});
