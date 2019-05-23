@@ -13,11 +13,12 @@ class RepresentationsUsersTableSeeder extends Seeder
     {
         $representationsusers = [
         	['places' =>'50',
-        	'users_id'=>'1',
+        	'users_id'=>'2',
         	'representation_id'=>'1',
         ],
 
         	['places'=>'70',
+<<<<<<< HEAD
         	'users_id'=>'1',
         	'representation_id'=>'4',
     	],	
@@ -25,6 +26,15 @@ class RepresentationsUsersTableSeeder extends Seeder
     		['places'=>'20',
     		'users_id'=>'1',
     		'representation_id'=>'2',
+=======
+        	'users_id'=>'2',
+        	'representation_id'=>'2',
+    	],	
+
+    		['places'=>'20',
+    		'users_id'=>'2',
+    		'representation_id'=>'3',
+>>>>>>> 1b535af660a40e8953ef42fdec51bf637445d56f
 
     	],
 
