@@ -28,6 +28,10 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
+            <a class="nav-link" href="#">Accueil</a>
+            <a class="nav-link" href="show">Prochains spectacle</a>
+            <a class="nav-link" href="#">Administration</a>
+            <a class="nav-link" href="#">Contact</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -76,23 +80,6 @@
                 </div>
             </div>
         </nav>
-       
-    </div>
 
-        <div class="container" style="display: block;position: fixed;top: 25vh;">
-            <div class="row">
-                <div class="col-2-lg" style="border: 0.5px solid black;background-color: white;" >
-            <nav class="">
-            <a class="nav-link" href="#">Accueil</a>
-            <a class="nav-link" href="#">Prochains spectacle</a>
-            <a class="nav-link" href="#">Administration</a>
-            <a class="nav-link" href="#">Contact</a>
-        </nav>
-        </div>
-        </div>
-        </div>
-        <main class="py-4">
-            @yield('content')
-        </main>
 </body>
 </html>
