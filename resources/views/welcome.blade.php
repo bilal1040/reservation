@@ -49,6 +49,19 @@
     </div>
 
 
+<!-- suggestion: faut-il garder cela?
+      <div class="container">
+      	<div class="text-center">
+      		<div class="col">
+      		<img src="images/cible.jpg" class="img1">
+                  <img src="images/ayiti.jpg" class="img1">
+
+
+
+      		</div>
+      	</div>
+      </div>
+ END suggestion -->
 </div>
        
 @endsection
