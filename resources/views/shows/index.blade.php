@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
+
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <h1 id="titreArtiste"> Liste des {{ $resource }}</h1>
 <br />
@@ -39,10 +40,5 @@
         </tbody>
     </table>
 
-    </div>
-        <div class="col">
-            
-        </div>
-    </div>
-</div>
+
 @endsection

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Roles;
 
-class RolesController extends Controller
+class PaiementConfirmController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +13,8 @@ class RolesController extends Controller
      */
     public function index()
     {
-        $roles = Roles::all();
-        return view('role.index',[
-            'roles'=>$roles,
-            'resource'=>'roles'
-        ]);
+        
+        return view('paiementconfirm');
     }
 
     /**
