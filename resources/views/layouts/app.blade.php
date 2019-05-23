@@ -107,19 +107,7 @@
             @yield('content')
         </main>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-
-    <div id='tab'>
-        <nav class="nav flex-column">
-          <a class="nav-link" href="#">Accueil</a>
-          <a class="nav-link" href="show">Prochains spectacle</a>
-          <a class="nav-link" href="#">Administration</a>
-          <a class="nav-link" href="#">Contact</a>
-        </nav>
-    </div>
+        
 
     <footer class="footer">
         Your Footer Content Goes Here
