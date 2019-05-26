@@ -15,13 +15,18 @@
 	width: 200px;
 }
 
-#titreArtiste{
+.titreArtiste{
 	font-size: 2em;
 	text-align:center;
 }
 
+.texteVideo{
+	font-size:1em;
+	text-align:center;
+}
+
 .img1{
-	height:70vh;
+	height:60vh;
 	
 }
 

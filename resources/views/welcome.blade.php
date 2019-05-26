@@ -3,7 +3,7 @@
 
       
 
-            <h1 class="title">Reservation</h1>
+            <h1 class="titreArtiste">Reservation</h1>
       </div>
 <div class="container">
     <div class="row">
@@ -43,7 +43,7 @@
           
         </div>
         <div class="col-4">
-          <h2 class="title">Les inconnus sketch de la révolution: Un pur régale</h2>
+          <h2 class="texteVideo">Les inconnus sketch de la révolution: Un pur régale</h2>
           <iframe class="w-100 img1"  src="https://www.youtube.com/embed/pibSbfAPE-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
              
           </iframe>

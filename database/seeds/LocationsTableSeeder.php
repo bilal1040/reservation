@@ -16,21 +16,21 @@ class LocationsTableSeeder extends Seeder
 	        ['slug'=>'belfius-art-collection', 
 	        'designation'=>'Belfius Art Collection', 
 	        'address'=>'50 rue de l\'Écuyer',
-	        'locality_id'=> '1', 
+	        'localitys_id'=> '1', 
 	        'website'=>'', 
 	        'phone'=>''],
 
 	        ['slug' => 'la-samaritaine',
 	        'designation'=>'La Samaritaine',
 	        'address'=>'rue des quatres vents',
-	        'locality_id'=> '2',
+	        'localitys_id'=> '2',
 	        'website'=>'www.lasamaritaine.be',
 	        'phone'=>'02/511.33.95'],
 
 	        ['slug'=>'theatre-royal-parc',
 	        'designation'=>'Théâtre Royal du Parc',
 	        'address'=>'Rue Mercelis 35',
-	        'locality_id'=>'3',
+	        'localitys_id'=>'3',
 	        'website'=>'www.theatreduparc.be',
 	        'phone'=>''],
         ];
@@ -41,7 +41,7 @@ class LocationsTableSeeder extends Seeder
         		'slug'=>$a['slug'],
         		'designation'=>$a['designation'],
         		'address'=>$a['address'],
-        		'locality_id'=>$a['locality_id'],
+        		'localitys_id'=>$a['localitys_id'],
         		'website'=>$a['website'],
         		'phone'=>$a['phone'],
 
