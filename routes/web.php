@@ -32,8 +32,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('paiement', 'PaiementController@index');
-Route::get('paiementconfirm','PaiementConfirmController@index' );
+Route::post('paiement', 'PaiementController@index',function(){
+	foreach($_POST['checkbox'] as $key) {
+           $shows = DB::table('shows')->where('id','=',$key)->get();
+
+    }
+    return $shows;
+});
+
 Route::get('contact', function (){
 	return view('contact');
 });

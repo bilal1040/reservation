@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Show;
 
 class PaiementController extends Controller
 {
@@ -13,8 +14,12 @@ class PaiementController extends Controller
      */
     public function index()
     {
-        return view('paiement');
-            
+        foreach($_POST['checkbox'] as $key) {
+           $shows = DB::table('shows')->where('id','=',$key)->get();
+           return $shows;
+            }
+    
+        
     }
 
     /**

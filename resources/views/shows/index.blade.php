@@ -15,30 +15,29 @@
    
 
     <div class="col-10">
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Slug</th>
-      <th scope="col">Title</th>
-      <th scope="col">Poster_url</th>
-      <th scope="col">Bookable</th>
-      <th scope="col">Price</th>
-      <th scope="col">Location_id</th>
-    </tr>
-  </thead>
-  <tbody>
-        @foreach($shows as $show)
-            <tr>
-                <td>{{ $show->slug }}</td>
-                <td class="col-">{{ $show->title }}</td>
-                <td>{{ $show->poster_url }}</td>
-                <td>{{ $show->bookable}}</td>
-                <td>{{ $show->price}}</td>
-                <td>{{ $show->location_id }}</td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
-
+    <form action="paiement" method="post">
+      @csrf
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th></th>
+                <th scope="col">Titre</th>
+                <th scope="col">Price</th> 
+              </tr>
+            </thead>
+            <tbody>
+                  @foreach($shows as $show)
+                      <tr> 
+                          <td name="id"> {{$show->id}} </td>
+                          <td><input type="checkbox" name="checkbox[]" value=" {{$show->id}} "></td>
+                          <td class="col-">{{ $show->title }}</td>
+                          <td>{{ $show->price}}</td>
+                          
+                      </tr>
+                  @endforeach
+                  </tbody>
+          </table>
+          <input type="submit" name="envoyer" value="confirmer">
+    </form>
 
 @endsection
