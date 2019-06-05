@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Show;
+use function sodium\add;
 
 class PaiementController extends Controller
 {
@@ -11,16 +13,26 @@ class PaiementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        dump($request->input('id'));die;
+       
+          $data = array();
 
-        $shows = Show::where();
-        
-        return view('paiement',[
-            'shows'=>$shows,
-        ]);
+          foreach ($_POST['checkbox'] as $key) {
+             array_push($data,$key);
+          }
+          $shows = DB::table('shows')->whereIn('id',$data)->get();
+          return view('paiement',[
+            'shows'=>$shows
+          ]);
             
+      
+           
+        
+            
+        
+    
+        
     }
 
     /**

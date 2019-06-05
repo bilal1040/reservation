@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <!-- footer style -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 7%;
-            background-color: black;
-            color: white;
-            text-align: center;
-        }
-    </style>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -38,10 +23,6 @@
 <body >  
 
 
-    <header>
-
-    </header>
-
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
    
@@ -50,11 +31,10 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
-
-            <a class="nav-link" href="\">Accueil</a>
-            <a class="nav-link" href="show">Prochains spectacle</a>
-            <a class="nav-link" href="#">Administration</a>
-            <a class="nav-link" href="contact">Contact</a>
+                <a class="nav-link" href="/">Accueil</a>
+                <a class="nav-link" href="show">Prochains spectacle</a>
+                <a class="nav-link" href="#">Administration</a>
+                <a class="nav-link" href="contact">Contact</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -103,33 +83,10 @@
                     </ul>
                 </div>
             </div>
-    
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-
-        
-
-    
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-
-    <div id='tab'>
-        <nav class="nav flex-column">
-          <a class="nav-link" href="#">Accueil</a>
-          <a class="nav-link" href="show">Prochains spectacle</a>
-          <a class="nav-link" href="#">Administration</a>
-          <a class="nav-link" href="#">Contact</a>
         </nav>
-    </div>
-
-    <footer class="footer">
-        Your Footer Content Goes Here
-    </footer>
+        <main class="py-4">
+            @yield('content')
+        </main>
 
 </body>
 </html>
