@@ -14,14 +14,23 @@
 	border-radius: 10px;
 	width: 200px;
 }
+
+
+
 .titreArtiste{
 	font-size: 2em;
 	text-align:center;
 }
+
+
+
 .texteVideo{
 	font-size:1em;
 	text-align:center;
 }
+
+
+
 .img1{
 	height:60vh;
 	
