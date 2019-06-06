@@ -19,7 +19,8 @@
 
 		<tr>
 			<td> {{$key->postal_code}} </td>
-			<td> {{$key->localities}} </td>
+			<!-- <td> {{$key->localities}} </td> -->
+			<td> {{$key->locality}} </td>
 		</tr>
 	@endforeach
 	</tbody>

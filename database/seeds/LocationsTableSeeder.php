@@ -16,22 +16,29 @@ class LocationsTableSeeder extends Seeder
 	        ['slug'=>'belfius-art-collection', 
 	        'designation'=>'Belfius Art Collection', 
 	        'address'=>'50 rue de l\'Écuyer',
-	        'localitys_id'=> '1', 
-	        'website'=>'', 
+	        //'localitys_id'=> '1',
+                'locality_id'=> '1',
+
+                'website'=>'',
 	        'phone'=>''],
 
 	        ['slug' => 'la-samaritaine',
 	        'designation'=>'La Samaritaine',
 	        'address'=>'rue des quatres vents',
-	        'localitys_id'=> '2',
-	        'website'=>'www.lasamaritaine.be',
+	        //'localitys_id'=> '2',
+
+                'locality_id'=> '2',
+
+                'website'=>'www.lasamaritaine.be',
 	        'phone'=>'02/511.33.95'],
 
 	        ['slug'=>'theatre-royal-parc',
 	        'designation'=>'Théâtre Royal du Parc',
 	        'address'=>'Rue Mercelis 35',
-	        'localitys_id'=>'3',
-	        'website'=>'www.theatreduparc.be',
+	        //'localitys_id'=>'3',
+                'locality_id'=>'3',
+
+                'website'=>'www.theatreduparc.be',
 	        'phone'=>''],
         ];
 
@@ -41,8 +48,11 @@ class LocationsTableSeeder extends Seeder
         		'slug'=>$a['slug'],
         		'designation'=>$a['designation'],
         		'address'=>$a['address'],
-        		'localitys_id'=>$a['localitys_id'],
-        		'website'=>$a['website'],
+        		// Why would we need id here?
+                // (Furthmore this cause a bug) and prevent to run the seeder)
+        		//'localitys_id'=>$a['localitys_id'],
+                'locality_id'=>$a['locality_id'],
+                'website'=>$a['website'],
         		'phone'=>$a['phone'],
 
 

@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLocalitysTable extends Migration
+//class CreateLocalitysTable extends Migration
+class CreateLocalitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +14,9 @@ class CreateLocalitysTable extends Migration
      */
     public function up()
     {
-        Schema::create('localitys', function (Blueprint $table) {
+        //Schema::create('localitys', function (Blueprint $table)
+        Schema::create('localities', function (Blueprint $table)
+        {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('postal_code')->length(6);
@@ -28,6 +31,7 @@ class CreateLocalitysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('localitys');
+        //Schema::dropIfExists('localitys');
+        Schema::dropIfExists('localities');
     }
 }

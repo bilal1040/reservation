@@ -20,9 +20,7 @@
     </tr>
   </thead>
   <tbody>
-
-   
-        @foreach($localitys as $locality)
+        @foreach($localities as $locality/*$localitys as $locality*/)
             <tr>
                 <td>{{ $locality->postal_code}}</td>
                 <td>{{ $locality->locality }}</td>

@@ -19,7 +19,8 @@ class CreateLocationsTable extends Migration
             $table->string('designation')->length(60);
             $table->string('address')->length(255);
             $table->unsignedInteger('locality_id')->index();
-            $table->foreign('locality_id')->references('id')->on('localitys');
+            //$table->foreign('locality_id')->references('id')->on('localitys');
+            $table->foreign('locality_id')->references('id')->on('localities');
             $table->string('website')->length('255');
             $table->string('phone')->length('30');
         });
