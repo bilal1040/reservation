@@ -8,6 +8,13 @@ use App\Reservation;
 use function sodium\add;
 use Illuminate\Support\Facades\Validator;
 
+use App\Reservation;
+use function sodium\add;
+use Illuminate\Support\Facades\Validator;
+
+
+
+
 class PaiementController extends Controller
 {
     /**
@@ -17,14 +24,18 @@ class PaiementController extends Controller
      */
     public function index()
     {
-          
+
+      
           $shows = DB::table('shows')->where('id',$_POST['choix'])->get();
+
+
           return view('paiement',[
             'shows'=>$shows,
 
 
 
           ]);
+
           
 
          
@@ -35,6 +46,10 @@ class PaiementController extends Controller
             
         
     
+=======
+
+         
+>>>>>>> 87e0a3315df6208d78b0cf4553802b6622a35b09
         
     }
     public function validator(array $data){

@@ -37,6 +37,7 @@ Route::post('paiement', 'PaiementController@index');
 Route::post('paiementconfirm','PaiementController@create');
 
 
+
 Route::get('contact', function (){
 	return view('contact');
 });

@@ -13,6 +13,7 @@ class ApiController extends Controller
      */
     public function index()
     {
+
        $apiRequest = '/api/spectacles/all/search'; // Requête (OBJET = identifiant unique) 
 
         $start = '0'; // Debut de l'offset 
@@ -42,6 +43,7 @@ class ApiController extends Controller
             
             
         ]);
+
     }
 
     /**

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 	<table class="table table-dark">
 		<thead>
 			<tr>
