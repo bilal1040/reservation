@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
-use App\Show;
-use App\Reservation;
-use function sodium\add;
-class PaiementConfirmController extends Controller
+
+class ApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,14 +13,35 @@ class PaiementConfirmController extends Controller
      */
     public function index()
     {
-        
-         return Reservation::create([
-            'montant'=>$_POST['total'],
-            'users_id'=>$_POST['user_id'],
-            'shows_id'=>$_POST['show_id']
+       $apiRequest = '/api/spectacles/all/search'; // Requête (OBJET = identifiant unique) 
 
+        $start = '0'; // Debut de l'offset 
+
+        $end = '5'; // Fin de l'offset 
+
+        $apiKey = '2208389d4c7bcbc49af23b6c6867e348bde7e8d1'; // Clé API 
+
+        $entryPoint = 'https://www.theatre-contemporain.net'; // Point d'entrée 
+                 
+        // initialiser CURL et définir les options
+        $apiCall = $entryPoint.$apiRequest.'?k='.$apiKey;
+        
+        
+         
+        // récupèrer les résultats
+        $result =  json_decode(file_get_contents($apiCall));
+
+        $cont=0;
+
+        
+        // faire un print des résultats
+        return view('api',[
+
+            'result'=>$result,
+            'cont'=>$cont
+            
+            
         ]);
-         return view('paiementconfirm');
     }
 
     /**

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Show;
+use App\Reservation;
+use function sodium\add;
+use Illuminate\Support\Facades\Validator;
 
 class PaiementController extends Controller
 {
@@ -14,22 +17,48 @@ class PaiementController extends Controller
      */
     public function index()
     {
-        foreach($_POST['checkbox'] as $key) {
-           $shows = DB::table('shows')->where('id','=',$key)->get();
-           return $shows;
-            }
+          
+          $shows = DB::table('shows')->where('id',$_POST['choix'])->get();
+          return view('paiement',[
+            'shows'=>$shows,
+
+
+
+          ]);
+          
+
+         
+            
+      
+           
+        
+            
+        
     
         
     }
-
+    public function validator(array $data){
+    return Validator::make($data, [
+            'total' => ['required', 'integer'],
+            'user_id' => ['required','integer'],
+            'show_id' =>['required','integer']
+         ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(array $data)
+    {  
+        
+       return Reservation::create([
+            'montant'=>$data['montant'],
+            'users_id'=>$data['user_id'],
+            'shows_id'=>$data['show_id']
+
+        ]);
+         return view('paiementconfirm');
     }
 
     /**
@@ -40,7 +69,7 @@ class PaiementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
 
 
