@@ -1,7 +1,15 @@
 @extends('layouts.app')
 @section('content')
 
+<<<<<<< HEAD
 
+=======
+@php
+
+$cont=0;
+
+@endphp
+>>>>>>> dd4e9dcb5ae6e4d14e33f36ab8c65ca5cbc9cd59
 
 <div class="container">
 	<div class="row">
@@ -9,8 +17,10 @@
 			
 		</div>
 		<div class="col-8">
+
 			<form action="paiementconfirm" method="post">
 				 @csrf
+
 			<table class="table">
 				<thead class="thead-dark">
 					<tr>
@@ -21,6 +31,7 @@
 				</thead>
 				<tbody>
 					@foreach($shows as $show)
+
 
 						<?php $total=0; ?>
 						<tr>
@@ -36,18 +47,37 @@
 							</td>
 						</tr>
 						
+
+						
+						<tr>
+							<td> {{$show ->title}} </td>
+							<td> {{$show ->price}} </td>
+							<td>
+								<input id="moins+{{$cont}} " type="button" value="-" />
+								<input id ="result+{{$cont}}" type="texte" value="0" maxlength="2" />
+								<input id="plus+{{$cont}}" type="button" value="+" />
+
+							</td>
+						</tr>
+						@php 
+						$cont++;
+						echo $qt;
+						@endphp
+
 					@endforeach
 
 				</tbody>
 			</table>
+
 			<input type="submit" name="envoyer"/>
 		</div>
-		<div id="total" name="total" value="{{$total}}">{{ gettype($total)}}</div>
+		<div id="total" name="total" value="{{$total}}">{{ $total}}</div>
 		
 		</form>
 	</div>
 </div>
  
+
 
 
 

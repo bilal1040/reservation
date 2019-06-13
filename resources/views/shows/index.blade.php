@@ -30,6 +30,7 @@
                   
                       <tr> 
                           
+
                           <td><input type="radio" name="choix" value=" {{$show->id}} "></td>
                           <td class="col-">{{ $show->title }}</td>
                           <td>{{ $show->price}}</td>

@@ -2,6 +2,7 @@
 
 
 	
+<<<<<<< HEAD
 		
 		var res = document.getElementById('result');
 		result = parseInt(res.value,10);
@@ -12,19 +13,32 @@
 		var total = document.getElementById('total').innerHTML;
 		console.log(total);
 		
+=======
+	
+		var res = document.getElementById('result'+index);
+		result = parseInt(res.value,10);
+
+		var plus = document.getElementById('plus'+index);
+		var moins = document.getElementById('moins'+index);
+	
+	
+>>>>>>> dd4e9dcb5ae6e4d14e33f36ab8c65ca5cbc9cd59
 
     // prendre en compte la modification du nombre au clavier
     res.addEventListener('blur', function() {
        result = document.getElementById('result');
 			 result = parseInt(result.value,10);
+
 			 total=result*prix;
 			 document.getElementById('total').innerHTML=total;
+
     });
     
     // boutton +
     plus.addEventListener('click', function() {
       if(result >= 0 && result < 99){
        result++;
+
        total=result*prix;
 
       
@@ -32,6 +46,9 @@
 
        document.getElementById('result').value= result;
        document.getElementById('total').innerHTML=total;
+
+       document.getElementById('result').value= result;
+
        }
     });
     
@@ -39,9 +56,13 @@
       moins.addEventListener('click', function() {
       if(result > 0 && result <= 99){
        result--;
+
        total=result*prix;
 
        document.getElementById('result').value= result;
        document.getElementById('total').innerHTML=total;
+
+       document.getElementById('result').value= result;
+
        }
     });

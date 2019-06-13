@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Show;
+
 use App\Reservation;
 use function sodium\add;
 use Illuminate\Support\Facades\Validator;
+
+
+
 
 class PaiementController extends Controller
 {
@@ -17,24 +21,19 @@ class PaiementController extends Controller
      */
     public function index()
     {
+
+          
           
           $shows = DB::table('shows')->where('id',$_POST['choix'])->get();
+
           return view('paiement',[
             'shows'=>$shows,
 
 
 
           ]);
-          
 
          
-            
-      
-           
-        
-            
-        
-    
         
     }
     public function validator(array $data){
