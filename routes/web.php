@@ -25,6 +25,7 @@ Route::get('representation', 'RepresentationController@index');
 Route::get('representationuser', 'RepresentationUserController@index');
 Route::get('inscription','InscriptionController@inscription');
 Route::get('login', 'LoginController@login');
+Route::get('api','ApiController@index');
 
 
 
@@ -32,8 +33,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('paiement', 'PaiementController@index');
-Route::get('paiementconfirm','PaiementConfirmController@index' );
+Route::post('paiement', 'PaiementController@index');
+
+
 Route::get('contact', function (){
 	return view('contact');
 });

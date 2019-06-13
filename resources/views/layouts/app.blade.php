@@ -54,6 +54,7 @@
                 <a class="nav-link" href="show">Prochains spectacle</a>
                 <a class="nav-link" href="#">Administration</a>
                 <a class="nav-link" href="contact">Contact</a>
+                <a class="nav-link" href="api">Api</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -107,19 +108,7 @@
             @yield('content')
         </main>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-
-    <div id='tab'>
-        <nav class="nav flex-column">
-          <a class="nav-link" href="#">Accueil</a>
-          <a class="nav-link" href="show">Prochains spectacle</a>
-          <a class="nav-link" href="#">Administration</a>
-          <a class="nav-link" href="#">Contact</a>
-        </nav>
-    </div>
+        
 
     <footer class="footer">
         Your Footer Content Goes Here

@@ -2,9 +2,9 @@
 @section('content')
 
 
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<h1 id="titreArtiste"> Liste des {{ $resource }}</h1>
-<br />
+
+<h1 class="titreArtiste"> Liste des {{ $resource }}</h1>
+
 
 
 <div class="container">
@@ -15,30 +15,32 @@
    
 
     <div class="col-10">
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Slug</th>
-      <th scope="col">Title</th>
-      <th scope="col">Poster_url</th>
-      <th scope="col">Bookable</th>
-      <th scope="col">Price</th>
-      <th scope="col">Location_id</th>
-    </tr>
-  </thead>
-  <tbody>
-        @foreach($shows as $show)
-            <tr>
-                <td>{{ $show->slug }}</td>
-                <td class="col-">{{ $show->title }}</td>
-                <td>{{ $show->poster_url }}</td>
-                <td>{{ $show->bookable}}</td>
-                <td>{{ $show->price}}</td>
-                <td>{{ $show->location_id }}</td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
+    <form action="paiement" method="post">
+      @csrf
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th></th>
+                <th scope="col">Titre</th>
+                <th scope="col">Price</th> 
+              </tr>
+            </thead>
+            @foreach($shows as $show)
+            <tbody>
+                  
+                      <tr> 
+                          
 
+                          <td><input type="radio" name="choix" value=" {{$show->id}} "></td>
+                          <td class="col-">{{ $show->title }}</td>
+                          <td>{{ $show->price}}</td>
+                          
+                      </tr>
+                  
+                  </tbody>
+                  @endforeach
+          </table>
+          <input type="submit" name="envoyer" value="confirmer">
+    </form>
 
 @endsection

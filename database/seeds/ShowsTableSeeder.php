@@ -32,7 +32,7 @@ class ShowsTableSeeder extends Seeder
 
         	[
         	'slug'=>'ceci-n-est-pas-chanteur-belge',
-        	'title'=>'Cece n\'est pas un chanteur belge',
+        	'title'=>'Ceci n\'est pas un chanteur belge',
         	'poster_url'=>'/images/claudebelgesaison220.jpg',
         	'location_id'=>'1',
         	'bookable'=>'0',
