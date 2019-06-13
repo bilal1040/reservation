@@ -22,7 +22,9 @@ class DatabaseSeeder extends Seeder
             ShowsTableSeeder::class,
             ArtistesTypeShowTableSeeder::class,
             RepresentationsTableSeeder::class,
-            RepresentationsUsersTableSeeder::class
+            RepresentationsUsersTableSeeder::class,
+            CategoryTableSeeder::class
+
         ]);
     }
 }

@@ -8,7 +8,7 @@ class Reservation extends Model
 {
   	protected $guarded=['users_id', 'shows_id'];
 
-  	protected $fillable =['quantite'];
+  	protected $fillable =['montant'];
 
 
     protected $table = 'reservation';

@@ -25,6 +25,7 @@ Route::get('representation', 'RepresentationController@index');
 Route::get('representationuser', 'RepresentationUserController@index');
 Route::get('inscription','InscriptionController@inscription');
 Route::get('login', 'LoginController@login');
+Route::get('api','ApiController@index');
 
 
 
@@ -32,13 +33,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('paiement', 'PaiementController@index',function(){
-	foreach($_POST['checkbox'] as $key) {
-           $shows = DB::table('shows')->where('id','=',$key)->get();
+Route::post('paiement', 'PaiementController@index');
+Route::post('paiementconfirm','PaiementController@create');
 
-    }
-    return $shows;
-});
 
 Route::get('contact', function (){
 	return view('contact');

@@ -2,9 +2,9 @@
 @section('content')
 
 
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<h1 id="titreArtiste"> Liste des {{ $resource }}</h1>
-<br />
+
+<h1 class="titreArtiste"> Liste des {{ $resource }}</h1>
+
 
 
 <div class="container">
@@ -25,17 +25,19 @@
                 <th scope="col">Price</th> 
               </tr>
             </thead>
+            @foreach($shows as $show)
             <tbody>
-                  @foreach($shows as $show)
+                  
                       <tr> 
-                          <td name="id"> {{$show->id}} </td>
-                          <td><input type="checkbox" name="checkbox[]" value=" {{$show->id}} "></td>
+                          
+                          <td><input type="radio" name="choix" value=" {{$show->id}} "></td>
                           <td class="col-">{{ $show->title }}</td>
                           <td>{{ $show->price}}</td>
                           
                       </tr>
-                  @endforeach
+                  
                   </tbody>
+                  @endforeach
           </table>
           <input type="submit" name="envoyer" value="confirmer">
     </form>

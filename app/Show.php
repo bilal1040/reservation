@@ -29,4 +29,9 @@ class Show extends Model
 
       return $this->belongsTo('App\Representation');
     }
+
+    public function category(){
+
+      return $this->belongsTo('App\Category');
+    }
 }

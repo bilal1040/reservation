@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
-use App\Show;
-use App\Reservation;
-use function sodium\add;
-class PaiementConfirmController extends Controller
+
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,14 +13,7 @@ class PaiementConfirmController extends Controller
      */
     public function index()
     {
-        
-         return Reservation::create([
-            'montant'=>$_POST['total'],
-            'users_id'=>$_POST['user_id'],
-            'shows_id'=>$_POST['show_id']
-
-        ]);
-         return view('paiementconfirm');
+        //
     }
 
     /**
