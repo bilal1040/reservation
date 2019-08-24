@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Show;
 use App\Reservation;
 use function sodium\add;
+
 class PaiementConfirmController extends Controller
 {
     /**
@@ -16,13 +17,7 @@ class PaiementConfirmController extends Controller
     public function index()
     {
         
-         return Reservation::create([
-            'montant'=>$_POST['total'],
-            'users_id'=>$_POST['user_id'],
-            'shows_id'=>$_POST['show_id']
-
-        ]);
-         return view('paiementconfirm');
+         
     }
 
     /**
@@ -43,7 +38,7 @@ class PaiementConfirmController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

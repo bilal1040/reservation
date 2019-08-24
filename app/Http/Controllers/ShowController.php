@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Show;
+use Illuminate\Support\Facades\DB;
 
 class ShowController extends Controller
 {
@@ -52,7 +53,12 @@ class ShowController extends Controller
      */
     public function show($id)
     {
-        //
+        $shows = DB::table('shows')->where('id',$id)->get();
+        
+          return view('details',[
+            'shows'=>$shows,
+            'shows'=>$shows,
+          ]);
     }
 
     /**

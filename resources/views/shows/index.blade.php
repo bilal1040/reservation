@@ -15,12 +15,11 @@
    
 
     <div class="col-10">
-    <form action="paiement" method="post">
-      @csrf
+   
           <table class="table">
             <thead class="thead-dark">
               <tr>
-                <th></th>
+               
                 <th scope="col">Titre</th>
                 <th scope="col">Price</th> 
               </tr>
@@ -30,8 +29,8 @@
                   
                       <tr> 
                           
-                          <td><input type="radio" name="choix" value=" {{$show->id}} "></td>
-                          <td class="col-">{{ $show->title }}</td>
+                          
+                          <td class="col-"><a href="details/{{$show->id}}">{{ $show->title }}</a></td>
                           <td>{{ $show->price}}</td>
                           
                       </tr>
@@ -39,7 +38,6 @@
                   </tbody>
                   @endforeach
           </table>
-          <input type="submit" name="envoyer" value="confirmer">
-    </form>
+    </div>
 
 @endsection
