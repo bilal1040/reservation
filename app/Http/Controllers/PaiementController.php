@@ -49,12 +49,7 @@ class PaiementController extends Controller
      */
     public function store(Request $request)
     {
-       $this->validate($request,[
-            'user_id' =>'required',
-            'show_id' =>'required',
-            'total' =>'required|integer'
-
-       ]);
+       
 
        $reservation = new Reservation([
         'montant'=> $request->get('total'),

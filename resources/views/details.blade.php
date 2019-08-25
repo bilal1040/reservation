@@ -11,7 +11,7 @@
 		<div class="col-8">
 
 
-			<form  method="POST" action=" {{ url('paiement') }} ">
+			<form  method="POST" action=" {{ route('PaiementController') }} ">
 			 @csrf
 
 
@@ -33,7 +33,7 @@
 
 							<input type="hidden" name="show_id" value="{{$show ->id}}">
 							<td> {{$show ->title}} </td>
-							<td id="prix" value="0"> {{$show ->price}} </td>
+							<td id="prix" value="0"> {{$show ->price}}  </td>
 							<td>
 								<input id="moins" type="button" value="-" />
 								<input id ="result" type="texte" value="0" maxlength="2" />
@@ -41,8 +41,11 @@
 
 							</td>
 						</tr>
-						
+								
 					@endforeach
+					  <div id="total"></div> 
+
+					{{$total}}
 
 				</tbody>
 			</table>
@@ -50,7 +53,7 @@
 
 			<input type="submit" name="envoyer"/>
 		</div>
-		<div id="total" name="total" value="{{$total}}">{{ $total}}</div>
+		
 		
 		</form>
 	</div>
