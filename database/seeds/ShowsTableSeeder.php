@@ -18,7 +18,8 @@ class ShowsTableSeeder extends Seeder
         	'poster_url'=>'/wrapped/imgs/ayiti.jpg',
         	'location_id'=>'2',
         	'bookable'=>'1',
-        	'price'=>9,50,
+        	'price'=>9.50,
+            'categorie_id'=>1,
        ],
 
         	[
@@ -28,6 +29,7 @@ class ShowsTableSeeder extends Seeder
         	'location_id'=>'3',
         	'bookable'=>'1',
         	'price'=>8,00,
+            'categorie_id'=>2
         ],
 
         	[
@@ -37,6 +39,7 @@ class ShowsTableSeeder extends Seeder
         	'location_id'=>'1',
         	'bookable'=>'0',
         	'price'=>7,50,
+            'categorie_id'=>2
         ],
         ];
 
@@ -48,6 +51,7 @@ class ShowsTableSeeder extends Seeder
         		'location_id'=>$a['location_id'],
         		'bookable'=>$a['bookable'],
         		'price'=>$a['price'],
+                'categorie_id'=>$a['categorie_id']
 
         	]);
         }

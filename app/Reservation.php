@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
 {
-  	protected $guarded=['users_id', 'shows_id'];
+  
 
-  	protected $fillable =['montant'];
+  	protected $fillable =['montant','users_id', 'shows_id'];
 
 
     protected $table = 'reservation';

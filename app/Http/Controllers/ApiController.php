@@ -44,8 +44,6 @@ class ApiController extends Controller
             
         ]);
 
-        return view('api');
-
     }
 
     /**

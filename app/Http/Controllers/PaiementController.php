@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Show;
-
 use App\Reservation;
 use function sodium\add;
 use Illuminate\Support\Facades\Validator;
+
+
 
 
 
@@ -22,42 +23,22 @@ class PaiementController extends Controller
     public function index()
     {
 
+      return view('test');
           
-          
-          $shows = DB::table('shows')->where('id',$_POST['choix'])->get();
 
-          return view('paiement',[
-            'shows'=>$shows,
-
-
-
-          ]);
-
-         
         
     }
-    public function validator(array $data){
-    return Validator::make($data, [
-            'total' => ['required', 'integer'],
-            'user_id' => ['required','integer'],
-            'show_id' =>['required','integer']
-         ]);
-    }
+    
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(array $data)
+    public function create()
     {  
         
-       return Reservation::create([
-            'montant'=>$data['montant'],
-            'users_id'=>$data['user_id'],
-            'shows_id'=>$data['show_id']
-
-        ]);
-         return view('paiementconfirm');
+      
+        
     }
 
     /**
@@ -68,8 +49,22 @@ class PaiementController extends Controller
      */
     public function store(Request $request)
     {
-       
+       $this->validate($request,[
+            'user_id' =>'required',
+            'show_id' =>'required',
+            'total' =>'required|integer'
+
+       ]);
+
+       $reservation = new Reservation([
+        'montant'=> $request->get('total'),
+        'users_id'=> $request->get('user_id'),
+        'shows_id'=> $request->get('show_id'),
+       ]);
+       $reservation->save();
+       return view('caca');
     }
+
 
 
     /**
@@ -80,7 +75,7 @@ class PaiementController extends Controller
      */
     public function show($id)
     {
-        //
+         
     }
 
     /**
@@ -119,24 +114,7 @@ class PaiementController extends Controller
 
         public function checkout()
     {
-        // Set your secret key: remember to change this to your live secret key in production
-        // See your keys here: https://dashboard.stripe.com/account/apikeys
-        \Stripe\Stripe::setApiKey("sk_test_54d02T37Y5GarDH0PuQi7Y3d");
-
-        // Token is created using Checkout or Elements!
-        // Get the payment token ID submitted by the form:
-        $token = $_POST['stripeToken'];
-
-        $charge = \Stripe\Charge::create([
-            'amount' => 4470,
-            'currency' => 'eur',
-            'description' => 'resto.name',
-            'source' => $token,
-            'statement_descriptor' => 'Jean',
-            'metadata' => ['order_id' => 6735],
-        ]);
-
-         return view('paiement');
+       
 
     }
 }

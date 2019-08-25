@@ -3,14 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Location;
-use Illuminate\Support\Facades\DB;
 
-use App\Reservation;
-use function sodium\add;
-use Illuminate\Support\Facades\Validator;
-
-class LocationController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +13,7 @@ class LocationController extends Controller
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -38,23 +32,9 @@ class LocationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function ajouter(Request $request)
+    public function store(Request $request)
     {
-        $this->validate($request,array(
-            'user_id' =>'required',
-            'show_id' =>'required',
-            'total' =>'required|integer'
-
-       ));
-
-       $reservation = new Reservation;
-
-       $reservation ->users_id = $request->user_id;
-       $reservation ->shows_id = $request->show_id;
-       $reservation ->montant =$request->total;
-       $reservation->save();
-       return view('caca');
-    
+        //
     }
 
     /**

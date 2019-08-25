@@ -9,21 +9,22 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('artist', 'ArtistController@index');
-Route::get('type', 'TypeController@index');
-Route::get('locality', 'LocalityController@index');
-Route::get('role','RoleController@index');
-Route::get('location','LocationController@index');
-Route::get('artistetype','ArtisteTypeController@index');
-Route::get('user','UserController@index');
+//Route::get('artist', 'ArtistController@index');
+//Route::get('type', 'TypeController@index');
+//Route::get('locality', 'LocalityController@index');
+//Route::get('role','RoleController@index');
+//Route::get('location','LocationController@index');
+//Route::get('artistetype','ArtisteTypeController@index');
+//Route::get('user','UserController@index');
 Route::get('show', 'ShowController@index');
-Route::get('artistetypeshow', 'ArtisteTypeShowController@index');
-Route::get('representation', 'RepresentationController@index');
-Route::get('representationuser', 'RepresentationUserController@index');
-Route::get('inscription','InscriptionController@inscription');
+//Route::get('artistetypeshow', 'ArtisteTypeShowController@index');
+//Route::get('representation', 'RepresentationController@index');
+//Route::get('representationuser', 'RepresentationUserController@index');
+//Route::get('inscription','InscriptionController@inscription');
 Route::get('login', 'LoginController@login');
 Route::get('api','ApiController@index');
 
@@ -32,8 +33,12 @@ Route::get('api','ApiController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('details/{id?}','ShowController@show');
+Route::post('paiement','paiementController@store');
 
-Route::post('paiement', 'PaiementController@index');
+
+
+
 
 
 Route::get('contact', function (){

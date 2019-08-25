@@ -13,7 +13,11 @@ class CreateShowsTable extends Migration
      */
     public function up()
     {
-        Schema::create('shows', function (Blueprint $table) {
+        Schema::create('shows', function (Blueprint $table){
+           
+
+
+
             $table->engine = 'InnoDB';
             $table->Increments('id');
             $table->string('slug')->length(60);
@@ -22,6 +26,8 @@ class CreateShowsTable extends Migration
             $table->tinyInteger('bookable')->length(1);
             $table->decimal('price',10,2);
             $table->unsignedInteger('location_id')->index();
+            $table->unsignedInteger('categorie_id')->index()->references('id')->on('category');
+
            
         });
     }
