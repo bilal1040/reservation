@@ -52,5 +52,7 @@
 
        document.getElementById('result').value= result;
 
+       
+       
        }
     });

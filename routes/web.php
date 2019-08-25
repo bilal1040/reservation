@@ -34,7 +34,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('details/{id?}','ShowController@show');
-Route::post('paiement','paiementController@store');
+Route::post('paiement','PaiementController@store')->name('PaiementController');
 
 
 
