@@ -59,7 +59,59 @@
 	</div>
 </div>
  
+<script>
+	var res = document.getElementById('result');
+		result = parseInt(res.value,10);
+		var plus = document.getElementById('plus');
+		var moins = document.getElementById('moins');
+		var prix = document.getElementById('prix').innerHTML;
+		var total = document.getElementById('total').innerHTML;
 
+    // prendre en compte la modification du nombre au clavier
+    res.addEventListener('blur', function() {
+       result = document.getElementById('result');
+			 result = parseInt(result.value,10);
+			 total=result*prix;
+			 document.getElementById('total').innerHTML=total;
+
+			 total=result*prix;
+			 document.getElementById('total').innerHTML=total;
+
+
+    });
+    
+    // boutton +
+    plus.addEventListener('click', function() {
+      if(result >= 0 && result < 99){
+       result++;
+       total=result*prix;
+       document.getElementById('result').value= result;
+       document.getElementById('total').innerHTML=total;
+
+       document.getElementById('result').value= result;
+
+
+       }
+    });
+    
+     // boutton -
+      moins.addEventListener('click', function() {
+      if(result > 0 && result <= 99){
+       result--;
+
+       total=result*prix;
+
+       document.getElementById('result').value= result;
+       document.getElementById('total').innerHTML=total;
+
+
+       document.getElementById('result').value= result;
+
+       
+       
+       }
+    });
+</script>
 
 @endsection
   
