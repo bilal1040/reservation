@@ -29,10 +29,13 @@
                   
                       <tr> 
                           
-                          
+                          @guest
+                          <td class="col-">{{ $show->title }}</td>
+                          <td>{{ $show->price}}</td>
+                          @else
                           <td class="col-"><a href="details/{{$show->id}}">{{ $show->title }}</a></td>
                           <td>{{ $show->price}}</td>
-                          
+                          @endguest
                       </tr>
                   
                   </tbody>
