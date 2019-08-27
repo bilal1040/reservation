@@ -52,7 +52,11 @@
             </a>
             	<a class="nav-link" href=" {{url('/')}} ">Accueil</a>
                 <a class="nav-link" href="{{url('show')}}">Prochains spectacle</a>
+                @if(null!==Auth::user())
+                @if(Auth::user()->roles_id == 1)
                 <a class="nav-link" href="#">Administration</a>
+                @endif
+                @endif
                 <a class="nav-link" href="{{url('contact')}}">Contact</a>
                 <a class="nav-link" href="{{url('api')}}">Api</a>
 
