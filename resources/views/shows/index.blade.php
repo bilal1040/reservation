@@ -16,7 +16,7 @@
 
     <div class="col-10">
    
-          <table class="table">
+          <table id="maTable" class="table">
             <thead class="thead-dark">
               <tr>
                
@@ -24,8 +24,9 @@
                 <th scope="col">Price</th> 
               </tr>
             </thead>
-            @foreach($shows as $show)
             <tbody>
+            @foreach($shows as $show)
+            
                   
                       <tr> 
                           
@@ -38,9 +39,16 @@
                           @endguest
                       </tr>
                   
-                  </tbody>
-                  @endforeach
+                  
+            @endforeach
+            </tbody>
           </table>
     </div>
+
+    <script>
+       $(document).ready(function (){
+        $('#maTable').DataTable();
+      });
+    </script>
 
 @endsection
