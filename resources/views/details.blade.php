@@ -11,10 +11,11 @@
 		<div class="col-8">
 
 
-			<form  method="POST" action=" {{ route('PaiementController') }} ">
-			 @csrf
+			
+			 
 
-
+			<form id="test" action="{{url('/')}} "> 
+			@csrf
 			<table class="table">
 				<thead class="thead-dark">
 					<tr>
@@ -28,10 +29,10 @@
 
 						<?php $total=0; ?>
 						<tr>
-							<input type="hidden" name="user_id" value="{{ Auth::user()->id}}">
+							<input type="hidden" id="user_id" name="user_id" value="{{ Auth::user()->id}}">
 							
 
-							<input type="hidden" name="show_id" value="{{$show ->id}}">
+							<input  type="hidden" id="show_id" name="show_id" value="{{$show ->id}}">
 							<td> {{$show ->title}} </td>
 							<td id="prix" value="0"> {{$show ->price}}  </td>
 							<td>
@@ -50,19 +51,31 @@
 				</tbody>
 			</table>
 
-
-			<input type="submit" name="envoyer"/>
+			<input type="submit" value="caca">
+			</form>
 		</div>
 		
 		
-		</form>
+		<div id="postTest"></div>
 	</div>
 </div>
  
 <script>
-	var res = document.getElementById('result');
+
+
+	$.ajaxSetup({
+		  	headers: {
+		    'X-CSRF-TOKEN': '<?php echo csrf_token(); ?>'
+	          }
+	        });
+
+
+		var res = document.getElementById('result');
 		result = parseInt(res.value,10);
 		var plus = document.getElementById('plus');
+		var show = document.getElementById('show_id').value;
+		var user = document.getElementById('user_id').value;
+		var submit = document.getElementById('submit');
 		var moins = document.getElementById('moins');
 		var prix = document.getElementById('prix').innerHTML;
 		var total = document.getElementById('total').innerHTML;
@@ -107,10 +120,35 @@
 
        document.getElementById('result').value= result;
 
-       
+        
        
        }
     });
+
+    $('#test').submit(function(e){
+    	e.preventDefault();
+    	$.ajax({
+    		method:'POST',
+    		url:'/blabla',
+    		data:{total:total,show_id:show,user_id:user},
+    		datatype:'json'
+
+
+    	})
+    	.done(function(data){
+    		document.location.href="/";
+    	})
+    	.fail(function(data){
+    		console.log(prix);
+    	})
+    	;
+    	});
+    
+    	
+    	 
+ 
+ 
+
 </script>
 
 @endsection

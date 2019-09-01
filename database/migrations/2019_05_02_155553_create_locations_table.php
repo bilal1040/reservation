@@ -14,11 +14,12 @@ class CreateLocationsTable extends Migration
     public function up()
     {
         Schema::create('locations', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->Increments('id');
             $table->string('slug')->length(60);
             $table->string('designation')->length(60);
             $table->string('address')->length(255);
-            $table->integer('localitys_id');
+            $table->unsignedInteger('localitys_id')->index();
             $table->string('website')->length(255);
             $table->string('phone')->length(30);
             $table->foreign('localitys_id')->references('id')->on('localitys');

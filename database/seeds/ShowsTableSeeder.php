@@ -15,7 +15,7 @@ class ShowsTableSeeder extends Seeder
         	[
         	'slug'=>'ayiti',
         	'title'=>'Ayiti',
-        	'poster_url'=>'/wrapped/imgs/ayiti.jpg',
+        	'description'=>'"Un homme est bloqué à l’aéroport. Questionné par les douaniers, il doit alors justif ier son identité, et surtout prouver qu’il est haïtien – qu’est-ce qu’être haïtien ? Commence alors une leçon d’histoire singulière." ',
         	'location_id'=>'2',
         	'bookable'=>'1',
         	'price'=>9.50,
@@ -25,7 +25,7 @@ class ShowsTableSeeder extends Seeder
         	[
         	'slug'=>'cible-mouvante',
         	'title'=>'Cible-mouvante',
-        	'poster_url'=>'/wrapped/imgs/cible.jpg',
+        	'description'=>'"C’est un nouveau petit bijou que nous propose Marius von Mayenburg. Une sorte de théâtre d’anticipation sociale où de tout jeunes enfants sont suspectés d’être des poseurs de bombes." ',
         	'location_id'=>'3',
         	'bookable'=>'1',
         	'price'=>8,00,
@@ -35,7 +35,7 @@ class ShowsTableSeeder extends Seeder
         	[
         	'slug'=>'ceci-n-est-pas-chanteur-belge',
         	'title'=>'Ceci n\'est pas un chanteur belge',
-        	'poster_url'=>'/images/claudebelgesaison220.jpg',
+        	'description'=>'"Entre Magritte (pour le surréalisme comique) et Maigret (pour le réalisme mélancolique), ce dixième opus semalien propose quatorze nouvelles chansons mêlées à de petits textes humoristiques." ',
         	'location_id'=>'1',
         	'bookable'=>'0',
         	'price'=>7,50,
@@ -47,7 +47,7 @@ class ShowsTableSeeder extends Seeder
         	DB::table('shows')->insert([
         		'slug'=>$a['slug'],
         		'title'=>$a['title'],
-        		'poster_url'=>$a['poster_url'],
+        		'description'=>$a['description'],
         		'location_id'=>$a['location_id'],
         		'bookable'=>$a['bookable'],
         		'price'=>$a['price'],

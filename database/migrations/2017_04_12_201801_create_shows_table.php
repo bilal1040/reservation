@@ -22,7 +22,8 @@ class CreateShowsTable extends Migration
             $table->Increments('id');
             $table->string('slug')->length(60);
             $table->string('title')->length(255);
-            $table->string('poster_url')->length(255);
+            //$table->string('poster_url')->length(255);
+            $table->text('description');
             $table->tinyInteger('bookable')->length(1);
             $table->decimal('price',10,2);
             $table->unsignedInteger('location_id')->index();

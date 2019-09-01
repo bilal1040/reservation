@@ -14,7 +14,8 @@ class CreateTypeTable extends Migration
     public function up()
     {
         Schema::create('types', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->engine = 'InnoDB';
+            $table->Increments('id');
             $table->string('type')->length(60);
         });
     }

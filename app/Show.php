@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Show extends Model
 {
-    protected $fillable =['slug', 'title', 'poster_url','bookable', 'price'];
+    protected $fillable =['slug', 'title', 'description','bookable', 'price'];
 
    	protected $guarded =['locations_id'];
 

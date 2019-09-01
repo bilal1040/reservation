@@ -30,11 +30,15 @@ Route::get('api','ApiController@index');
 
 
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('details/{id?}','ShowController@show');
-Route::post('paiement','PaiementController@store')->name('PaiementController');
+//Route::post('paiement','PaiementController@store')->name('PaiementController');
+//Route::post('details/{id?}','ShowController@index');
+Route::post('/blabla','PaiementController@store');
+
 
 
 
@@ -43,4 +47,9 @@ Route::post('paiement','PaiementController@store')->name('PaiementController');
 
 Route::get('contact', function (){
 	return view('contact');
+});
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });

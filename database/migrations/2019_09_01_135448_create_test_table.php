@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArtistsTable extends Migration
+class CreateTestTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,18 @@ class CreateArtistsTable extends Migration
      */
     public function up()
     {
-        Schema::create('artists', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('test', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->Increments('id');
+            $table->string('login')->length(30);
+            $table->string('password')->length(255);
             $table->string('firstname')->length(60);
             $table->string('lastname')->length(60);
+            $table->string('email')->length(100);
+            $table->string('langue')->length(2);
+            $table->timestamps();
             
+            $table->rememberToken();
         });
     }
 
@@ -28,6 +35,6 @@ class CreateArtistsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artists');
+        Schema::dropIfExists('test');
     }
 }

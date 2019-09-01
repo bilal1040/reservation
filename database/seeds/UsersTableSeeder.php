@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
    				'lastname'=>'abdel',
    				'email'=>'zeronada@hotmail.fr',
    				'langue'=>'fr',
-   				'roles_id'=>1,
+   				'role_id'=>1,
    			],
    			[
    				'id'=>2,
@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
    				'lastname'=>'bilal',
    				'email'=>'syrie1080@hotmail.fr',
    				'langue'=>'fr',
-   				'roles_id'=>1,
+   				'role_id'=>1,
    			],
    			[
    				'id'=>3,
@@ -41,7 +41,7 @@ class UsersTableSeeder extends Seeder
    				'lastname'=>'Ali',
    				'email'=>'DindarAli@hotmail.fr',
    				'langue'=>'fr',
-   				'roles_id'=>1,
+   				'role_id'=>1,
    			],
    			[
    				'id'=>4,
@@ -51,7 +51,7 @@ class UsersTableSeeder extends Seeder
    				'lastname'=>'blueSky',
    				'email'=>'BlueSky@hotmail.fr',
    				'langue'=>'fr',
-   				'roles_id'=>1,
+   				'role_id'=>1,
    			]
 
    		];
@@ -65,7 +65,7 @@ class UsersTableSeeder extends Seeder
        		'lastname'=>$a['lastname'],
        		'email'=>$a['email'],
        		'langue'=>$a['langue'],
-       		'roles_id'=>$a['roles_id']
+       		'role_id'=>$a['role_id']
        	]);
        }
 

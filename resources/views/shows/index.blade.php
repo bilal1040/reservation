@@ -14,13 +14,14 @@
     </div>
    
 
-    <div class="col-10">
+    <div class="col-10" style="margin-bottom: 20px;">
    
           <table id="maTable" class="table">
             <thead class="thead-dark">
               <tr>
                
                 <th scope="col">Titre</th>
+                <th scope="col" data-orderable="false">Description</th>
                 <th scope="col">Price</th> 
               </tr>
             </thead>
@@ -32,9 +33,11 @@
                           
                           @guest
                           <td class="col-">{{ $show->title }}</td>
+                          <td class="col">{{$show->description}}</td>
                           <td>{{ $show->price}}</td>
                           @else
                           <td class="col-"><a href="details/{{$show->id}}">{{ $show->title }}</a></td>
+                          <td class="col">{{$show->description}}</td>
                           <td>{{ $show->price}}</td>
                           @endguest
                       </tr>
@@ -43,7 +46,7 @@
             @endforeach
             </tbody>
           </table>
-    </div>
+    </div >
 
     <script>
        $(document).ready(function (){

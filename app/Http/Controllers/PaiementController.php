@@ -23,7 +23,7 @@ class PaiementController extends Controller
     public function index()
     {
 
-      return view('test');
+      
           
 
         
@@ -57,7 +57,7 @@ class PaiementController extends Controller
         'shows_id'=> $request->get('show_id'),
        ]);
        $reservation->save();
-       return view('caca');
+      // protected $redirectTo = '/home';
     }
 
 

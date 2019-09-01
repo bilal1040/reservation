@@ -25,8 +25,10 @@
     <title>{{ config('app.name', 'Bonjour') }}</title>
 
     <!-- Scripts -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    
     
 
     <!-- Fonts -->
@@ -56,8 +58,8 @@
             	<a class="nav-link" href=" {{url('/')}} ">Accueil</a>
                 <a class="nav-link" href="{{url('show')}}">Prochains spectacle</a>
                 @if(null!==Auth::user())
-                @if(Auth::user()->roles_id == 1)
-                <a class="nav-link" href="#">Administration</a>
+                @if(Auth::user()->role_id == 1)
+                <a class="nav-link" href="/admin">Administration</a>
                 @endif
                 @endif
                 <a class="nav-link" href="{{url('contact')}}">Contact</a>
@@ -86,26 +88,27 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->login}} <span class="caret"></span>
+                            <li class="nav-item">
+                                <a  class="nav-link">
+                                    {{ Auth::user()->login}} 
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                              </li>
+                              <li class="nav-item">   
+                                    <a class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-
+                                </li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                </div>
+                                
 
                 
-                            </li>
+                           
                         @endguest
                     </ul>
                 </div>
