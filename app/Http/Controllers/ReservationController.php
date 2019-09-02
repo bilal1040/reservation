@@ -15,24 +15,24 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {   
+      public function index()
+    {
+        $a=array();
 
         if(null!==Auth::user()){
+            //$res contient les réservationsId d'un user
             $res = DB::table('reservation')->where('users_id',Auth::user()->id)->get();
 
-
+            //On récupère le show
             foreach ($res as $key) {
                 $shows = DB::table('shows')->where('id',$key->shows_id)->get();
+                array_push($a,$shows);
+            }
                 return view('listeReservation',[
             'res'=>$res,
-            'shows'=>$shows
+            'shows'=>$a
             ]);
-            }
-            
-        
         }
-        
     }
 
     /**

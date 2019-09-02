@@ -12,16 +12,16 @@
 	
 	
 		<tbody>
-			
 			@foreach($shows as $show)
 			<tr>
-				<td>{{$show->title}} </td>
+				<td>{{$show[0]->title}} </td>
+                <td>{{$res[ $loop->index]->montant}}</td>
 			</tr>
-				
+
 			@endforeach
-			
-			
-			
+
+
+
 		</tbody>
 	
 	</table>
