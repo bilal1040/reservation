@@ -14,7 +14,7 @@ class CreateReservationTable extends Migration
         Schema::create('reservation', function (Blueprint $table) {
              $table->engine = 'InnoDB';
             $table->Increments('id');
-            $table->integer('montant');
+            $table->decimal('montant',10,2);
              $table->unsignedInteger('users_id')->index();
            $table->foreign('users_id')->references('id')->on('users');
              $table->unsignedInteger('shows_id')->index();

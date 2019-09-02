@@ -58,13 +58,15 @@
             	<a class="nav-link" href=" {{url('/')}} ">Accueil</a>
                 <a class="nav-link" href="{{url('show')}}">Prochains spectacle</a>
                 @if(null!==Auth::user())
-                @if(Auth::user()->role_id == 1)
-                <a class="nav-link" href="/admin">Administration</a>
-                @endif
+                    @if(Auth::user()->role_id ==2)
+                    <a class="nav-link" href="/listeReservation">Vos réservation</a> 
+                    @endif
+                    @if(Auth::user()->role_id == 1)
+                    <a class="nav-link" href="/admin">Administration</a>
+                    @endif
                 @endif
                 <a class="nav-link" href="{{url('contact')}}">Contact</a>
                 <a class="nav-link" href="{{url('api')}}">Api</a>
-
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

@@ -14,7 +14,7 @@
 			
 			 
 
-			<form id="test" action="{{url('/')}} "> 
+			<form id="test"  > 
 			@csrf
 			<table class="table">
 				<thead class="thead-dark">
@@ -22,12 +22,13 @@
 						<th>Titre</th>
 						<th>Prix</th>
 						<th>Nombre de place</th>
+						<th>Total</th>
 					</tr>
 				</thead>
 				<tbody>
 					@foreach($shows as $show)
 
-						<?php $total=0; ?>
+						
 						<tr>
 							<input type="hidden" id="user_id" name="user_id" value="{{ Auth::user()->id}}">
 							
@@ -41,22 +42,23 @@
 								<input id="plus" type="button" value="+" />
 
 							</td>
+							<td><div id="total"></div> </td>
 						</tr>
 								
 					@endforeach
-					  <div id="total"></div> 
+					  
 
-					{{$total}}
+					
 
 				</tbody>
 			</table>
 
-			<input type="submit" value="caca">
+			<input type="submit" value="confirmer">
 			</form>
 		</div>
 		
 		
-		<div id="postTest"></div>
+		
 	</div>
 </div>
  
@@ -136,6 +138,7 @@
 
     	})
     	.done(function(data){
+    		alert('votre réservation  est confirmer');
     		document.location.href="/";
     	})
     	.fail(function(data){

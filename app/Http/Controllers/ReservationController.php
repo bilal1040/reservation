@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Show;
+use App\Reservation;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\Show;
 
-class ShowController extends Controller
+class ReservationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,14 +16,23 @@ class ShowController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $shows= show::all();
+    {   
 
-        return view('shows.index',[
-            'shows'=>$shows,
-            'resource'=>'Spectacles',
+        if(null!==Auth::user()){
+            $res = DB::table('reservation')->where('users_id',Auth::user()->id)->get();
 
-        ]);
+
+            foreach ($res as $key) {
+                $shows = DB::table('shows')->where('id',$key->shows_id)->get();
+                return view('listeReservation',[
+            'res'=>$res,
+            'shows'=>$shows
+            ]);
+            }
+            
+        
+        }
+        
     }
 
     /**
@@ -31,7 +42,7 @@ class ShowController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -53,15 +64,7 @@ class ShowController extends Controller
      */
     public function show($id)
     {
-        $shows = DB::table('shows')->where('id',$id)->get();
         
-        
-          return view('details',[
-            'shows'=>$shows,
-            'shows'=>$shows,
-
-
-          ]);
     }
 
     /**
