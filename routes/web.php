@@ -39,6 +39,8 @@ Route::get('details/{id?}','ShowController@show');
 //Route::post('details/{id?}','ShowController@index');
 Route::post('/blabla','PaiementController@store');
 
+Route::get('listeReservation','ReservationController@index');
+
 
 
 
