@@ -59,7 +59,8 @@
                 <a class="nav-link" href="{{url('show')}}">Prochains spectacle</a>
                 @if(null!==Auth::user())
                     @if(Auth::user()->role_id ==2)
-                    <a class="nav-link" href="/listeReservation">Vos réservation</a> 
+                    <a class="nav-link" href="/listeReservation">Vos réservation</a>
+                    <a class="nav-link" href="/profile">Votre profil</a> 
                     @endif
                     @if(Auth::user()->role_id == 1)
                     <a class="nav-link" href="/admin">Administration</a>

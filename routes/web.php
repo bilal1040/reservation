@@ -21,12 +21,14 @@ Route::get('/', function () {
 //Route::get('artistetype','ArtisteTypeController@index');
 //Route::get('user','UserController@index');
 Route::get('show', 'ShowController@index');
+Route::get('profile','UserController@index');
 //Route::get('artistetypeshow', 'ArtisteTypeShowController@index');
 //Route::get('representation', 'RepresentationController@index');
 //Route::get('representationuser', 'RepresentationUserController@index');
 //Route::get('inscription','InscriptionController@inscription');
 Route::get('login', 'LoginController@login');
 Route::get('api','ApiController@index');
+Route::post('profile','UserController@modifProfile');
 
 
 

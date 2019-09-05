@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class UserController extends Controller
 {
@@ -14,12 +19,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users=user::all();
-        return view('users.index', [
-            'users'=>$users,
-            'resource'=>'Users',
-
-        ]);
+        
+        return view('profile');
     }
 
     /**
@@ -74,7 +75,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
@@ -86,5 +87,27 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function modifProfile()
+    {
+
+        request()->validate([
+            'login' => ['required', 'string', 'max:100'],
+            'firstname' =>['required','string','max:60'],
+            'lastname' =>['required','string','max:60'],
+            
+        ]);
+
+
+        $utilisateur = Auth()->user();
+        $utilisateur->login = request('login');
+        $utilisateur->firstname = request('firstname');
+        $utilisateur->lastname = request('lastname');
+        $utilisateur->save();
+
+        return view('/profile');
+
     }
 }
