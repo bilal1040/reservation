@@ -53,7 +53,17 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $m=$request->get('montant');
+        $u=$request->get('user_id');
+        $s=$request->get('show_id');
+
+        Reservation::create([
+            'users_id'=>$u,
+            'montant'=>$m,
+            'shows_id'=>$s
+        ]);
+        
+
     }
 
     /**

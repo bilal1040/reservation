@@ -14,8 +14,8 @@
 			
 			 
 
-			<form id="test"  > 
-			
+			<form id="test" method="POST" action="{{url('paiement')}}" > 
+			@csrf
 			<table class="table">
 				<thead class="thead-dark">
 					<tr>
@@ -31,7 +31,7 @@
 						
 						<tr>
 							<input type="hidden" id="user_id" name="user_id" value="{{ Auth::user()->id}}">
-							
+							<input type="hidden" name="total" class="total" value="">
 
 							<input  type="hidden" id="show_id" name="show_id" value="{{$show ->id}}">
 							<td> {{$show ->title}} </td>
@@ -42,7 +42,7 @@
 								<input id="plus" type="button" value="+" />
 
 							</td>
-							<td><div id="total"></div> </td>
+							<td><div class="total"></div> </td>
 						</tr>
 								
 					@endforeach
@@ -80,17 +80,18 @@
 		var submit = document.getElementById('submit');
 		var moins = document.getElementById('moins');
 		var prix = document.getElementById('prix').innerHTML;
-		var total = document.getElementById('total').innerHTML;
+		var total = 0;
+		var totalTest = document.getElementsByClassName('total').innerHTML;
 
     // prendre en compte la modification du nombre au clavier
     res.addEventListener('blur', function() {
        result = document.getElementById('result');
 			 result = parseInt(result.value,10);
-			 total=result*prix;
-			 document.getElementById('total').innerHTML=total;
+			 total =result*prix;
+			 document.getElementsByClassName('total')[0].value=total;
+       		 document.getElementsByClassName('total')[1].innerHTML=total;
 
-			 total=result*prix;
-			 document.getElementById('total').innerHTML=total;
+			 
 
 
     });
@@ -101,7 +102,8 @@
        result++;
        total=result*prix;
        document.getElementById('result').value= result;
-       document.getElementById('total').innerHTML=total;
+       document.getElementsByClassName('total')[0].value=total;
+       document.getElementsByClassName('total')[1].innerHTML=total;
 
        document.getElementById('result').value= result;
 
@@ -117,7 +119,8 @@
        total=result*prix;
 
        document.getElementById('result').value= result;
-       document.getElementById('total').innerHTML=total;
+       document.getElementsByClassName('total')[0].value=total;
+       document.getElementsByClassName('total')[1].innerHTML=total;
 
 
        document.getElementById('result').value= result;
@@ -126,12 +129,12 @@
        
        }
     });
-
+      /*
     $('#test').submit(function(e){
     	e.preventDefault();
     	$.ajax({
-    		method:'POST',
-    		url:'/blabla',
+    		method:'GET',
+    		url:'/paiement',
     		data:{total:total,show_id:show,user_id:user},
     		datatype:'json'
 
@@ -139,7 +142,7 @@
     	})
     	.done(function(data){
     		alert('votre réservation  est confirmer');
-    		document.location.href="/";
+    		document.location.href="/paiementconfirm";
     	})
     	.fail(function(data){
     		console.log(prix);
@@ -147,7 +150,7 @@
     	;
     	});
     
-    	
+    	*/
     	 
  
  

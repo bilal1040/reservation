@@ -7,6 +7,7 @@ use App\Show;
 use App\Reservation;
 use function sodium\add;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Arr;
 
 
 
@@ -22,8 +23,8 @@ class PaiementController extends Controller
      */
     public function index()
     {
+        
 
-      
           
 
         
@@ -50,14 +51,31 @@ class PaiementController extends Controller
     public function store(Request $request)
     {
        
+        $montant=$request->get('total');
+        $users_id=$request->get('user_id');
+        $shows_id=$request->get('show_id');
 
-       $reservation = new Reservation([
-        'montant'=> $request->get('total'),
-        'users_id'=> $request->get('user_id'),
-        'shows_id'=> $request->get('show_id'),
-       ]);
-       $reservation->save();
-      // protected $redirectTo = '/home';
+         // Set your secret key. Remember to switch to your live secret key in production!
+        // See your keys here: https://dashboard.stripe.com/account/apikeys
+        \Stripe\Stripe::setApiKey('sk_test_NHVQKGSXofzXhNZhicmYHRUb00dPVCDxJi');
+
+
+        $intent = \Stripe\PaymentIntent::create([
+            'amount' => $montant*100,
+            'currency' => 'eur',
+
+        ]);
+        
+
+        $ClientSecret = Arr::get($intent,'client_secret');
+
+
+        return view('paiement',[
+           'client_secret' =>$ClientSecret,
+           'montant'=>$montant,
+           'user_id'=>$users_id,
+           'show_id'=>$shows_id,
+        ]);
     }
 
 
@@ -110,6 +128,13 @@ class PaiementController extends Controller
         public function checkout()
     {
        
+
+    }
+    public function paiement(Request $request)
+    {
+        
+        
+
 
     }
 }

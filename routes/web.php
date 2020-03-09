@@ -29,6 +29,7 @@ Route::get('profile','UserController@index');
 Route::get('login', 'LoginController@login');
 Route::get('api','ApiController@index');
 Route::post('profile','UserController@modifProfile');
+Route::post('reservation','ReservationController@store');
 
 
 
@@ -39,7 +40,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('details/{id?}','ShowController@show');
 //Route::post('paiement','PaiementController@store')->name('PaiementController');
 //Route::post('details/{id?}','ShowController@index');
-Route::post('/blabla','PaiementController@store');
+Route::post('paiement','PaiementController@store');
+Route::get('merci',function(){
+	return view('merci');
+
+});
+
 
 Route::get('listeReservation','ReservationController@index');
 

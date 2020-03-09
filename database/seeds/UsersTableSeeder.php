@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
 
    		$users = [
    			[
-   				'id'=>1,
+   				
    				'login'=>'xero',
    				'password'=>Hash::make('xeromusz12'),
    				'firstname'=>'hajjaj',
@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
    				'role_id'=>1,
    			],
    			[
-   				'id'=>2,
+   				
    				'login'=>'syrie',
    				'password'=>Hash::make('root123'),
    				'firstname'=>'Rimo',
@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
    				'role_id'=>1,
    			],
    			[
-   				'id'=>3,
+   				
    				'login'=>'aliD',
    				'password'=>Hash::make('root123'),
    				'firstname'=>'Dindar',
@@ -44,7 +44,7 @@ class UsersTableSeeder extends Seeder
    				'role_id'=>1,
    			],
    			[
-   				'id'=>4,
+   				
    				'login'=>'Ouss',
    				'password'=>Hash::make('root123'),
    				'firstname'=>'Oussama',
@@ -58,7 +58,7 @@ class UsersTableSeeder extends Seeder
 
    		 foreach ($users as $a ) {
        	DB::table('users')->insert([
-       		'id'=>$a['id'],
+       		
        		'login'=>$a['login'],
        		'password'=>$a['password'],
        		'firstname'=>$a['firstname'],

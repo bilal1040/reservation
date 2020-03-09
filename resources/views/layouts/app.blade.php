@@ -25,7 +25,10 @@
     <title>{{ config('app.name', 'Bonjour') }}</title>
 
     <!-- Scripts -->
+    @yield('jsStripe')
 
+
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     
@@ -35,6 +38,7 @@
     
     
     <link rel="stylesheet" type="text/css" href="https:////cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -126,6 +130,6 @@
     <footer class="footer">
         Your Footer Content Goes Here
     </footer>
-
+@yield('StripeContent')
 </body>
 </html>
